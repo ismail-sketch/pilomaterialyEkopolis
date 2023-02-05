@@ -103,9 +103,21 @@ main {
   margin: 0 auto;
 }
 
+.big-title {
+  font-size: 64px;
+  font-weight: 900;
+}
+
+@media (max-width: 1230px) {
+  .big-title {
+    font-size: calc(22px + (42) * ((100vw - 320px) / (910)));
+  }
+}
+
+/*------------------------------------------------*/
 .header {
-  height: 85px;
-  background-color: transparent;
+  min-height: 85px;
+  background-color: #fff;
   width: 100%;
   z-index: 3;
   -webkit-box-pack: justify;
@@ -143,7 +155,7 @@ main {
 
 @media (max-width: 1230px) {
   .header__logo .logo img {
-    width: calc(150px + (60) * ((100vw - 320px) / (910)));
+    width: calc(180px + (30) * ((100vw - 320px) / (910)));
   }
 }
 
@@ -172,7 +184,7 @@ main {
   color: #282828;
 }
 
-@media (max-width: 815px) {
+@media (max-width: 950px) {
   .header__contacts {
     margin-right: 45px;
   }
@@ -256,7 +268,7 @@ main {
   height: 100%;
 }
 
-@media (max-width: 815px) {
+@media (max-width: 950px) {
   .header-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -279,7 +291,7 @@ main {
   cursor: pointer;
 }
 
-@media (max-width: 815px) {
+@media (max-width: 950px) {
   .burger {
     display: block;
   }
@@ -330,7 +342,6 @@ main {
 .menu {
   margin: 0 auto;
   display: block;
-  padding: 15px;
   position: relative;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
@@ -341,17 +352,22 @@ main {
 .triangle {
   width: 0;
   height: 0;
-  top: 7px;
-  right: -22px;
+  top: 6px;
+  right: -19px;
   border-style: solid;
-  border-width: 10px 8px 0 8px;
+  border-width: 8px 7px 0 7px;
   position: absolute;
   border-color: #5a5a5a transparent transparent transparent;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-@media (max-width: 815px) {
+.triangle.active {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+@media (max-width: 950px) {
   .menu {
     overflow: auto;
     position: fixed;
@@ -376,7 +392,7 @@ main {
   }
 }
 
-@media (max-width: 815px) {
+@media (max-width: 950px) {
   .menu {
     width: 100%;
   }
@@ -388,12 +404,23 @@ main {
   display: flex;
   -webkit-transition: all .3s;
   transition: all .3s;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1170px) {
+  .menu__list {
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+  }
+}
+
+@media (max-width: 1140px) {
   .menu__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -403,7 +430,7 @@ main {
   }
 }
 
-@media (max-width: 815px) {
+@media (max-width: 950px) {
   .menu__list {
     display: block;
     min-height: 100%;
@@ -411,24 +438,14 @@ main {
   }
 }
 
-.menu__item:not(:last-child) {
-  margin-right: 30px;
-}
-
-@media (max-width: 940px) {
-  .menu__item:not(:last-child) {
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 815px) {
+@media (max-width: 950px) {
   .menu__item:not(:last-child) {
     margin-bottom: 30px;
   }
 }
 
 .menu__item a {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   -webkit-transition: color .3s;
   transition: color .3s;
@@ -437,22 +454,21 @@ main {
   position: relative;
 }
 
-@media (max-width: 1230px) {
-  .menu__item a {
-    font-size: calc(16px + (2) * ((100vw - 320px) / (910)));
-  }
-}
-
 .sub-menu {
   position: absolute;
   background-color: #fff;
-  border-radius: 5px;
   -webkit-box-shadow: -1px 4px 14px 0px rgba(34, 60, 80, 0.08);
           box-shadow: -1px 4px 14px 0px rgba(34, 60, 80, 0.08);
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+.sub-menu.active {
+  height: auto;
+  padding: 20px 10px;
+  max-height: 700px;
 }
 
 .sub-menu .menu__item {
@@ -460,6 +476,7 @@ main {
   line-height: 1.2;
   border-bottom: 1px solid #b0b0b0;
   padding-bottom: 7px;
+  margin-right: 0;
 }
 
 .sub-menu .menu__item a {
@@ -469,8 +486,7 @@ main {
 @media (any-hover: hover) {
   .menu__item:hover .sub-menu {
     padding: 20px 10px;
-    height: auto;
-    overflow: visible;
+    max-height: 700px;
   }
   .menu__item:hover .triangle {
     -webkit-transform: rotate(-180deg);
@@ -481,6 +497,54 @@ main {
 @media (any-hover: hover) {
   .menu__item a:hover {
     color: #858585;
+  }
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  height: 50px;
+  background-color: transparent;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+.main {
+  width: 100%;
+  padding-top: 139px;
+}
+
+.main__cont-wrp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__sub-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.main__btn {
+  width: 310px;
+  background-color: #FFA41E;
+  margin-top: 30px;
+  color: #fff;
+  -webkit-box-shadow: 0px 5px 13px 1px rgba(255, 177, 61, 0.69);
+          box-shadow: 0px 5px 13px 1px rgba(255, 177, 61, 0.69);
+}
+
+@media (any-hover: hover) {
+  .main__btn:hover {
+    background-color: #e99517;
   }
 }
 

@@ -7,6 +7,7 @@ const menu = document.querySelector('.menu');
 const menuList = document.querySelector('.menu__list');
 
 
+
 burger.addEventListener('click', () => {
     burgerSpan.forEach(item => {
         item.classList.toggle('active');
@@ -27,7 +28,21 @@ window.addEventListener('click', (e) => {
 
 // sub-menu=======================
 const subMenu = document.querySelector('.sub-menu');
-const clickMenu = document.querySelector('.click-menu');
+const clickSubmenu = document.querySelector('.click-submenu');
+const triangle = document.querySelector('.triangle');
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+
+
+
+if (isMobile) {
+    clickSubmenu.addEventListener('click', () => {
+        subMenu.classList.toggle('active');
+        triangle.classList.toggle('active');
+    })
+}
+
+
+
 
 // Перемещение элементов в меню
 function moveMenuEl() {

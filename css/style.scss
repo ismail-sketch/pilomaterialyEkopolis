@@ -104,7 +104,8 @@ main {
         display: block;
         margin-top: 7px;
         font-family: 'Roboto', sans-serif;
-        line-height: 1.2;
+        line-height: 1.1;
+        font-size: 12px;
     }
     img {
         width: 210px;
@@ -362,6 +363,7 @@ main {
         max-height: 0;
         overflow: hidden;
         transition: all .5s;
+        padding: 0 10px;
         &.active {
             height: auto;
             padding: 20px 10px;

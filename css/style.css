@@ -146,7 +146,8 @@ main {
   display: block;
   margin-top: 7px;
   font-family: 'Roboto', sans-serif;
-  line-height: 1.2;
+  line-height: 1.1;
+  font-size: 12px;
 }
 
 .header__logo .logo img {
@@ -463,6 +464,7 @@ main {
   overflow: hidden;
   -webkit-transition: all .5s;
   transition: all .5s;
+  padding: 0 10px;
 }
 
 .sub-menu.active {

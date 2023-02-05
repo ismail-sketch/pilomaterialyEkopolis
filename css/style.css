@@ -124,9 +124,8 @@ main {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 60px;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -136,6 +135,16 @@ main {
   margin-top: 7px;
   font-family: 'Roboto', sans-serif;
   line-height: 1.2;
+}
+
+.header__logo .logo img {
+  width: 210px;
+}
+
+@media (max-width: 1230px) {
+  .header__logo .logo img {
+    width: calc(150px + (60) * ((100vw - 320px) / (910)));
+  }
 }
 
 .header__contacts {
@@ -163,15 +172,34 @@ main {
   color: #282828;
 }
 
-@media (max-width: 200px) {
+@media (max-width: 815px) {
   .header__contacts {
-    margin-right: 40px;
+    margin-right: 45px;
+  }
+}
+
+@media (max-width: 750px) {
+  .header__contacts {
+    margin-right: 10px;
   }
 }
 
 @media (max-width: 670px) {
   .header__contacts {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 435px) {
+  .header__contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 15px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -209,6 +237,12 @@ main {
           transform: translate(5px, -1px);
 }
 
+@media (max-width: 435px) {
+  .header__contacts-tel1::after {
+    display: none;
+  }
+}
+
 .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -222,7 +256,7 @@ main {
   height: 100%;
 }
 
-@media (max-width: 200px) {
+@media (max-width: 815px) {
   .header-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -245,7 +279,7 @@ main {
   cursor: pointer;
 }
 
-@media (max-width: 200px) {
+@media (max-width: 815px) {
   .burger {
     display: block;
   }
@@ -304,7 +338,20 @@ main {
   transition: transform .3s, -webkit-transform .3s;
 }
 
-@media (max-width: 200px) {
+.triangle {
+  width: 0;
+  height: 0;
+  top: 7px;
+  right: -22px;
+  border-style: solid;
+  border-width: 10px 8px 0 8px;
+  position: absolute;
+  border-color: #5a5a5a transparent transparent transparent;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@media (max-width: 815px) {
   .menu {
     overflow: auto;
     position: fixed;
@@ -312,6 +359,7 @@ main {
     top: 0;
     z-index: 3;
     width: 400px;
+    background-color: #fff;
     padding: 20px 15px 20px 15px;
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
@@ -328,7 +376,7 @@ main {
   }
 }
 
-@media (max-width: 200px) {
+@media (max-width: 815px) {
   .menu {
     width: 100%;
   }
@@ -345,7 +393,17 @@ main {
           justify-content: center;
 }
 
-@media (max-width: 200px) {
+@media (max-width: 920px) {
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 815px) {
   .menu__list {
     display: block;
     min-height: 100%;
@@ -363,7 +421,7 @@ main {
   }
 }
 
-@media (max-width: 200px) {
+@media (max-width: 815px) {
   .menu__item:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -376,6 +434,48 @@ main {
   transition: color .3s;
   color: #282828;
   text-transform: uppercase;
+  position: relative;
+}
+
+@media (max-width: 1230px) {
+  .menu__item a {
+    font-size: calc(16px + (2) * ((100vw - 320px) / (910)));
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: -1px 4px 14px 0px rgba(34, 60, 80, 0.08);
+          box-shadow: -1px 4px 14px 0px rgba(34, 60, 80, 0.08);
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.sub-menu .menu__item {
+  margin-bottom: 7px;
+  line-height: 1.2;
+  border-bottom: 1px solid #b0b0b0;
+  padding-bottom: 7px;
+}
+
+.sub-menu .menu__item a {
+  font-size: 16px;
+}
+
+@media (any-hover: hover) {
+  .menu__item:hover .sub-menu {
+    padding: 20px 10px;
+    height: auto;
+    overflow: visible;
+  }
+  .menu__item:hover .triangle {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
 }
 
 @media (any-hover: hover) {

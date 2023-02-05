@@ -5,6 +5,13 @@
 $blackColor: #282828;
 $blackColorLight: #808080;
 $orangeColor: #FFA41E;
+
+//Адаптив, начинающийся с определенной ширины (с ширины ограничивающего контейнера, как правило)
+@mixin adaptiveAllCont($adaptProperty, $maxSize, $minSize, $maxContainer, $minMob) {
+    @media (max-width: #{$maxContainer + px}) {
+        #{$adaptProperty}: calc(#{$minSize + px} + (#{$maxSize - $minSize}) * ((100vw - #{$minMob + px}) / (#{$maxContainer - $minMob})))
+    }
+}
 /*Обнуление*/
 *{
 	padding: 0;
@@ -80,10 +87,7 @@ main {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      height: 60px;
+      align-items: center;
     }
   }
 
@@ -94,6 +98,10 @@ main {
         margin-top: 7px;
         font-family: 'Roboto', sans-serif;
         line-height: 1.2;
+    }
+    img {
+        width: 210px;
+        @include adaptiveAllCont('width', 210, 150, 1230, 320);
     }
   }
 
@@ -112,17 +120,29 @@ main {
     }
   }
 
-  @media (max-width: 200px) {
+  @media (max-width: 815px) {
     .header__contacts {
-      margin-right: 40px;
+      margin-right: 45px;
     }
   }
+  @media (max-width: 750px) {
+    .header__contacts {
+        margin-right: 10px;
+    }
+}
 
   @media (max-width: 670px) {
     .header__contacts {
       font-size: 12px;
     }
   }
+  @media (max-width: 435px) {
+    .header__contacts {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
   .header__contacts-wa {
         display: flex;
         align-items: center;
@@ -145,6 +165,9 @@ main {
             height: 20px;
             background-color: $blackColorLight;
             transform: translate(5px, -1px);
+            @media (max-width: 435px) {
+                display: none;
+            }
         }
    }
 
@@ -161,7 +184,7 @@ main {
     height: 100%;
   }
 
-  @media (max-width: 200px) {
+  @media (max-width: 815px) {
     .header-container {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -184,7 +207,7 @@ main {
     cursor: pointer;
   }
 
-  @media (max-width: 200px) {
+  @media (max-width: 815px) {
     .burger {
       display: block;
     }
@@ -242,8 +265,19 @@ main {
     transition: transform .3s;
     transition: transform .3s, -webkit-transform .3s;
   }
+  .triangle {
+    width: 0;
+    height: 0;
+    top: 7px;
+    right: -22px;
+    border-style: solid;
+    border-width: 10px 8px 0 8px;
+    position: absolute;
+    border-color: #5a5a5a transparent transparent transparent;
+    transition: all .5s;
+  }
 
-  @media (max-width: 200px) {
+  @media (max-width: 815px) {
     .menu {
       overflow: auto;
       position: fixed;
@@ -251,6 +285,7 @@ main {
       top: 0;
       z-index: 3;
       width: 400px;
+      background-color: #fff;
       padding: 20px 15px 20px 15px;
       -webkit-transform: translateX(100%);
               transform: translateX(100%);
@@ -265,7 +300,7 @@ main {
     }
   }
 
-  @media (max-width: 200px) {
+  @media (max-width: 815px) {
     .menu {
       width: 100%;
     }
@@ -275,9 +310,13 @@ main {
     display: flex;
     transition: all .3s;
     justify-content: center;
+    @media (max-width: 920px) {
+        flex-direction: column;
+        gap: 10px;
+    }
   }
 
-  @media (max-width: 200px) {
+  @media (max-width: 815px) {
     .menu__list {
       display: block;
       min-height: 100%;
@@ -295,7 +334,7 @@ main {
     }
   }
 
-  @media (max-width: 200px) {
+  @media (max-width: 815px) {
     .menu__item:not(:last-child) {
       margin-bottom: 30px;
     }
@@ -307,7 +346,43 @@ main {
     transition: color .3s;
     color: $blackColor;
     text-transform: uppercase;
+    position: relative;
+    @include adaptiveAllCont('font-size', 18, 16, 1230, 320);
   }
+  .sub-menu {
+        position: absolute;
+        background-color: #fff;
+        // padding: 20px 10px;
+        border-radius: 5px;
+        box-shadow: -1px 4px 14px 0px rgba(34, 60, 80, 0.08);
+        height: 0;
+        overflow: hidden;
+        transition: all .5s;
+        .menu__item {
+            margin-bottom: 7px;
+            line-height: 1.2;
+            border-bottom: 1px solid #b0b0b0;
+            padding-bottom: 7px;
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .menu__item {
+        @media(any-hover: hover) {
+            &:hover {
+                .sub-menu {
+                    padding: 20px 10px;
+                    height: auto;
+                    overflow: visible;
+                }
+                .triangle {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
 
   @media (any-hover: hover) {
     .menu__item a:hover {

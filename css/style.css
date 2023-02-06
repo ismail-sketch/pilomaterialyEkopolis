@@ -726,6 +726,10 @@ main {
   margin-bottom: 69px;
 }
 
+.goods__name-and-size:not(:last-child) {
+  margin-bottom: 18px;
+}
+
 .goods__name {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
@@ -738,10 +742,6 @@ main {
   font-size: 14px;
   color: #808080;
   display: block;
-}
-
-.goods__size:not(:last-child) {
-  margin-bottom: 18px;
 }
 
 .goods__comment {

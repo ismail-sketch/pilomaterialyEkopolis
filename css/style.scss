@@ -413,13 +413,39 @@ main {
     width: 100%;
     padding-top: 139px;
     padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
     @include adaptiveAllCont('padding-top', 139, 110, 1230, 320);
 
+    &__bg-img-wrp {
+      position: absolute;
+      right: 35%;
+      bottom: 6%;
+      max-width: 372px;
+      max-height: 362px;
+      @include adaptiveAllCont('max-width', 372, 200, 1230, 320);
+      @include adaptiveAllCont('max-height', 362, 180, 1230, 320);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &__shavings-img-wrp {
+      position: absolute;
+      top: 70%;
+      left: 0;
+      img {
+        width: 100px;
+        @include adaptiveAllCont('width', 100, 70, 1230, 320);
+      }
+    }
     &__cont-wrp {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
+        position: relative;
+        z-index: 1;
         @media(max-width: 620px) {
           flex-direction: column-reverse;
           align-items: flex-start;
@@ -463,16 +489,107 @@ main {
       max-width: 515px;
       max-height: 510px;
       @include adaptiveAllCont('max-width', 515, 200, 1230, 320);
-      // @media (max-width: 620px) {
-      //   width: 300px;
-      // }
+
       img {
         width: 100%;
         height: 100%;
       }
     }
   }
+/*MAIN END------------------------------------------*/
 
+  .small-title {
+    font-size: 36px;
+    font-weight: 800;
+    @include adaptiveAllCont('font-size', 36, 20, 1230, 320);
+  }
+
+/*GOODS SECTION------------------------------------------*/
+.goods {
+  padding: 50px 0;
+  position: relative;
+
+  &__img-branch {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    top: -70px;
+    transform: rotate(-15deg);
+    @include adaptiveAllCont('width', 200, 140, 1230, 850);
+    @media (max-width: 850px) {
+      display: none;
+    }
+  }
+  &__pilomat {
+    display: flex;
+    gap: 25px;
+  }
+  &__pilomat-img-wrp {
+  }
+  &__right {
+    padding-top: 20px;
+  }
+  &__title {
+  }
+  &__gost {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: $blackColorLight;
+    margin-top: 8px;
+  }
+  &__goods-wrp {
+    display: flex;
+    margin-top: 25px;
+    column-gap: 75px;
+    margin-bottom: 69px;
+  }
+  &__desk-wrp {
+  }
+  &__name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  &__size {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: $blackColorLight;
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+  &__comment {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: $blackColorLight;
+    max-width: 358px;
+    line-height: 1.5;
+  }
+  &__btn-wrp {
+    display: flex;
+    margin-top: 20px;
+    column-gap: 30px;
+  }
+  &__btn {
+    background-color: #fff;
+    border: 1px solid $orangeColor;
+    color: $orangeColor;
+    width: 325px;
+
+    @media(any-hover: hover) {
+      &:hover {
+        background-color: $orangeColor;
+        color: #fff;
+      }
+    }
+  }
+  .excel-img {
+    display: block;
+  }
+}
+/*GOODS END------------------------------------------*/
 
   .footer {
     height: 150px;

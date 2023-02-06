@@ -61,6 +61,7 @@ const form = document.querySelectorAll('.form');
 const formErrorBtn = document.querySelector('.form__error-btn');
 const formSucsessBtn = document.querySelector('.form__sucsess-btn');
 
+// Открытие закрытие модалки===========================
 function showOpenModal() {
     popupBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -89,6 +90,27 @@ function showOpenModal() {
     })
 }
 showOpenModal();
+
+// Открытие формы в зависимости от кнопки===================
+const forms = Array.from(document.querySelectorAll('.form'));
+
+function openFormDependeBtn() {
+    window.addEventListener('click', (e) => {
+        if(e.target.closest('.btn')) {
+            forms.forEach(form => {
+                form.style.display = 'none';
+            })
+        }
+        if(e.target.closest('.btn')) {
+            forms.find(item => {
+                if(item.dataset.modal == e.target.dataset.btn) {
+                    item.style.display = 'block';
+                }
+            })
+        }
+    })
+}
+openFormDependeBtn();
 
 // Проверка на заполненность поля телефона
 function checkInputTel() {

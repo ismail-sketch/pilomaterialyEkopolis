@@ -133,7 +133,7 @@
 
                             <p class="goods__comment">А также в наличии сухостой (хвоя), необрезные доски сортов А, Б и другие виды пиломатериала</p>
                             <div class="goods__btn-wrp">
-                                <button class="goods__btn btn" data-btn="pilomat">Узнать цены</button>
+                                <button class="btn goods__btn popup-btn" data-btn="pilomat">Узнать цены</button>
                                 <img class="excel-img" src="img/main/excel.png" alt="изображение">
                             </div>
                     </div>
@@ -144,15 +144,30 @@
          <footer class="footer"></footer>
 
     <!-- ПОПАП С ФОРМАМИ --------------------------->
-        <section>
             <div class="overlay">
-                <!-- 1-я форма -->
-                <form class="form form__main" action="#">
+                <!--форма главного экрана -->
+                    <form class="form form__main" action="#" data-modal="main">
+                        <span class="cross">&#10006;</span>
+                        <img class="form__img" src="img/main/popup-img-1.jpg" alt="изображение">
+
+                        <div class="form__cont-wrp">
+                                <h3 class="form__title">Получите каталог всей нашей продукции</h3>
+                                <span class="form__sub-title">Заполните форму и мы вышлем Вам актуальный каталог продукции с ценами</span>
+                            <label for="input__tel">Введите номер телефона*</label>
+                            <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
+
+                            <button type="submit" class="form__btn">Отправить</button>
+                            <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
+                        </div>
+                    </form>
+
+                 <!--форма пиломатериалов -->
+                 <form class="form form__pilomat" action="#" data-modal="pilomat">
                     <span class="cross">&#10006;</span>
-                    <img class="form__img" src="img/main/popup-img-1.jpg" alt="изображение">
+                    <img class="form__img" src="img/main/pilomat-form.png" alt="изображение">
 
                     <div class="form__cont-wrp">
-                            <h3 class="form__title">Получите каталог всей нашей продукции</h3>
+                            <h3 class="form__title">Получите каталог пиломатериала с ценами</h3>
                             <span class="form__sub-title">Заполните форму и мы вышлем Вам актуальный каталог продукции с ценами</span>
                         <label for="input__tel">Введите номер телефона*</label>
                         <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
@@ -180,7 +195,6 @@
                 </div>
             </div>
         <!-- overlay -->
-        </section>
     </div>
 <!-- wrapper -->
 

@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Pilomaterialy</title>
 </head>
 <body>
-    <di class="wrapper">
+    <div class="wrapper">
         <header class="header">
             <div class="container header-container">
                  <div class="header__logo">
@@ -62,7 +67,7 @@
                    <div class="main__cont-left">
                         <h1 class="big-title main__title">Поставляем <br> качественный <br> пиломатериал</h1>
                         <h2 class="main__sub-title">В любых количествах и точно в срок <br> Гарантия лучшей цены в Воронеже</h2>
-                        <button class="btn main__btn">Заказать звонок</button>
+                        <button class="btn main__btn popup-btn">Заказать звонок</button>
                    </div>
                    <div class="main__img-wrp">
                     <img src="img/main/main_img.png" alt="img">
@@ -72,7 +77,47 @@
          </main>
 
          <footer class="footer"></footer>
-    </di >
+
+    <!-- ПОПАП С ФОРМАМИ --------------------------->
+        <section>
+            <div class="overlay">
+                <!-- 1-я форма -->
+                <form class="form form__main" action="#">
+                    <span class="cross">&#10006;</span>
+                    <img class="form__img" src="img/main/popup-img-1.jpg" alt="img">
+
+                    <div class="form__cont-wrp">
+                            <h3 class="form__title">Получите каталог всей нашей продукции</h3>
+                            <span class="form__sub-title">Заполните форму и мы вышлем Вам актуальный каталог продукции с ценами</span>
+                        <label for="input__tel">Введите номер телефона*</label>
+                        <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
+
+                        <button type="submit" class="form__btn">Отправить</button>
+                        <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
+                    </div>
+                </form>
+
+                <!-- Окно успешной отправки -->
+                <div class="form__sucsess-window">
+                    <span class="form__sucsess-cross">
+                        <img src="img/main/checked.svg" alt="checked">
+                    </span>
+                    <h3 class="form__sucsess-title">Спасибо! Ваша заявка отправлена. В ближайшее время мы с Вами свяжемся!</h3>
+                    <button class="form__sucsess-btn">OK</button>
+                </div>
+
+                <!-- Окно ошибки -->
+                <div class="form__error-window">
+                    <span class="form__error-cross">&#10006;</span>
+                    <h3 class="form__error-title">Неправильно заполнены поля:</h3>
+                    <span class="form__error-comment">Поле «Введите номер телефона» обязательно для заполнения.</span>
+                    <button class="form__error-btn">OK</button>
+                </div>
+            </div>
+        <!-- overlay -->
+        </section>
+    </div>
+<!-- wrapper -->
 
 <script src="js/index.js"></script>
 </body>

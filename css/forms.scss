@@ -1,0 +1,312 @@
+
+$blackColor: #282828;
+$blackColorLight: #808080;
+$orangeColor: #FFA41E;
+
+//Адаптив, начинающийся с определенной ширины (с ширины ограничивающего контейнера, как правило)
+@mixin adaptiveAllCont($adaptProperty, $maxSize, $minSize, $maxContainer, $minMob) {
+    @media (max-width: #{$maxContainer + px}) {
+        #{$adaptProperty}: calc(#{$minSize + px} + (#{$maxSize - $minSize}) * ((100vw - #{$minMob + px}) / (#{$maxContainer - $minMob})))
+    }
+}
+
+/* Попап с формами */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgba(12, 12, 12, 0.9);
+    padding: 0 15px;
+    padding-top: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+    overflow: auto;
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form {
+    width: 400px;
+    height: 600px;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 3px;
+    @media (max-width: 450px) {
+        width: 100%;
+    }
+}
+.form__img {
+    width: 100%;
+}
+.form__title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.form__sub-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: $blackColor;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1.4;
+}
+
+.form__cont-wrp {
+    padding: 25px 20px 20px 20px;
+    @media (max-width: 420px) {
+        width: 100%;
+        padding: 25px 10px 20px 10px;
+    }
+}
+.form label {
+    display: block;
+    margin-bottom: 10px;
+}
+.form input:not(:last-child) {
+    margin: 0;
+    margin-bottom: 20px;
+}
+.form input:active, .form input:focus {
+    outline: none;
+}
+.cross {
+    position: absolute;
+    right: -14px;
+    top: -11px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $blackColor;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+ .input__name, .input__tel, .form__btn {
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid rgb(143, 143, 143);
+    display: block;
+    height: 40px;
+    border-radius: 3px;
+    padding: 10px;
+}
+.form__btn {
+    border: none;
+    background-color: $orangeColor;
+    color: #fff;
+    cursor: pointer;
+    transition: background .3s;
+    padding: 0;
+    margin-top: 20px;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 5px 13px 1px rgba(255, 177, 61, 0.69);
+    margin-bottom: 10px;
+}
+.form__btn:hover {
+    background-color: #e99517;
+}
+
+.form__pol-conf {
+    font-family: 'Roboto', sans-serif;
+    color: $blackColorLight;
+    a {
+        color: inherit;
+        text-decoration: underline;
+        font-family: inherit;
+        line-height: 1.2;
+    }
+}
+
+/* окно успешной отправки*/
+.form__sucsess-window {
+    width: 478px;
+    height: 265px;
+    background-color: #a0de7d;
+    border-radius: 15px;
+    margin: 0 auto;
+    top: -465px;
+    position: relative;
+    padding: 0px 10px 15px 10px;
+    transition: all .3s;
+    display: none;
+    @media(max-width: 515px) {
+        width: 95%;
+    }
+    &.active {
+        display: block;
+    }
+}
+.form__sucsess-cross {
+    width: 95px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: 50%;
+    top: -15%;
+    transform: translateX(-50%);
+    position: relative;
+    background-color: #fff;
+    border: 7px solid #a0de7d;
+    @media(max-width: 768px) {
+        width: 70px;
+        height: 70px;
+        top: -12%;
+    }
+    img {
+        width: 70%;
+    }
+}
+.form__sucsess-title {
+    font-size: 27px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 15px;
+    transform: translateY(-20px);
+    @include adaptiveAllCont('font-size', 27, 22, 1230, 320);
+}
+
+.form__sucsess-btn {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background .3s;
+    transform: translateY(-20px);
+    @media(any-hover: hover) {
+        &:hover {
+            background-color: #dfdfdf;
+        }
+    }
+    @media(max-width: 390px) {
+        height: 45px;
+    }
+}
+
+/*Окно ошибки----*/
+.form__error-window {
+    width: 478px;
+    height: 265px;
+    background-color: #f27474;
+    border-radius: 15px;
+    margin: 0 auto;
+    top: -465px;
+    position: relative;
+    padding: 0px 10px 15px 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    @media(max-width: 515px) {
+        width: 95%;
+    }
+
+    &.active {
+        animation: fErrAnim .5s forwards;
+        // animation: name duration timing-function delay iteration-count direction fill-mode;
+    }
+}
+
+@keyframes fErrAnim {
+    0% {
+        transform: scale(0.9);
+    }
+    30% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+    70% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        pointer-events: visible;
+    }
+}
+.form__error-cross {
+    width: 95px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #f27474;
+    border-radius: 50%;
+    left: 50%;
+    top: -15%;
+    transform: translateX(-50%);
+    position: relative;
+    background-color: #fff;
+    border: 7px solid #f27474;
+    @media(max-width: 768px) {
+        width: 70px;
+        height: 70px;
+        top: -12%;
+    }
+}
+.form__error-title {
+    font-size: 27px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+    @include adaptiveAllCont('font-size', 27, 22, 1230, 320);
+}
+.form__error-comment {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #fff;
+    text-align: center;
+    display: block;
+}
+
+.form__error-btn {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background .3s;
+    @media(any-hover: hover) {
+        &:hover {
+            background-color: #dfdfdf;
+        }
+    }
+    @media(max-width: 390px) {
+        height: 45px;
+    }
+}

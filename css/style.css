@@ -1,7 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
 /*Обнуление*/
 * {
   padding: 0;
@@ -37,8 +35,6 @@ html, body {
   -webkit-text-size-adjust: 100%;
   color: #282828;
   font-family: 'Montserrat', sans-serif;
-  /*font-family: 'Roboto', sans-serif;
-    /font-family: 'Raleway', sans-serif;*/
 }
 
 input, button, textarea {
@@ -110,7 +106,7 @@ main {
 
 @media (max-width: 1230px) {
   .big-title {
-    font-size: calc(22px + (42) * ((100vw - 320px) / (910)));
+    font-size: calc(24px + (40) * ((100vw - 320px) / (910)));
   }
 }
 
@@ -512,9 +508,17 @@ main {
   transition: background .3s;
 }
 
+/*SECTION MAIN========================*/
 .main {
   width: 100%;
   padding-top: 139px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 1230px) {
+  .main {
+    padding-top: calc(110px + (29) * ((100vw - 320px) / (910)));
+  }
 }
 
 .main__cont-wrp {
@@ -527,12 +531,38 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 620px) {
+  .main__cont-wrp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .main__title br {
+    display: none;
+  }
 }
 
 .main__sub-title {
   font-size: 28px;
   font-weight: 700;
   margin-top: 15px;
+  line-height: 1.2;
+}
+
+@media (max-width: 1230px) {
+  .main__sub-title {
+    font-size: calc(16px + (12) * ((100vw - 320px) / (910)));
+  }
 }
 
 .main__btn {
@@ -544,10 +574,44 @@ main {
           box-shadow: 0px 5px 13px 1px rgba(255, 177, 61, 0.69);
 }
 
+@media (max-width: 1230px) {
+  .main__btn {
+    width: calc(300px + (10) * ((100vw - 320px) / (910)));
+  }
+}
+
+@media (max-width: 1230px) {
+  .main__btn {
+    height: calc(45px + (5) * ((100vw - 320px) / (910)));
+  }
+}
+
 @media (any-hover: hover) {
   .main__btn:hover {
     background-color: #e99517;
   }
+}
+
+@media (max-width: 330px) {
+  .main__btn {
+    width: 100%;
+  }
+}
+
+.main__img-wrp {
+  max-width: 515px;
+  max-height: 510px;
+}
+
+@media (max-width: 1230px) {
+  .main__img-wrp {
+    max-width: calc(200px + (315) * ((100vw - 320px) / (910)));
+  }
+}
+
+.main__img-wrp img {
+  width: 100%;
+  height: 100%;
 }
 
 .footer {

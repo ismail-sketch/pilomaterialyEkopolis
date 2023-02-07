@@ -21,30 +21,58 @@ $orangeColor: #FFA41E;
     background-color: rgba(12, 12, 12, 0.9);
     padding: 0 15px;
     padding-top: 50px;
+    padding-bottom: 50px;
     opacity: 0;
     visibility: hidden;
     transition: all .6s;
     overflow: auto;
+    display: flex;
+    justify-content: center;
 }
 .overlay.active {
     opacity: 1;
     visibility: visible;
 }
-
+.overlay2 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 110;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+.overlay3 {
+    display: none;
+}
+.form-wrp {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    &.active {
+        display: none;
+    }
+}
 .form {
     width: 400px;
-    min-height: 600px;
+    min-height: 530px;
     background-color: #fff;
     margin: 0 auto;
     position: relative;
     border-radius: 3px;
+    overflow: hidden;
+
     @media (max-width: 450px) {
         width: 100%;
     }
 }
 .form__img {
     width: 100%;
-    max-height: 226px;
+    max-height: 260px;
+    @include adaptiveAllCont(' max-height', 260, 165, 1230, 320);
 }
 .form__title {
     font-family: 'Raleway', sans-serif;
@@ -62,10 +90,10 @@ $orangeColor: #FFA41E;
 }
 
 .form__cont-wrp {
-    padding: 25px 20px 20px 20px;
+    padding: 25px 20px 30px 20px;
     @media (max-width: 420px) {
         width: 100%;
-        padding: 25px 10px 20px 10px;
+        padding: 25px 10px 30px 10px;
     }
 }
 .form label {
@@ -83,6 +111,7 @@ $orangeColor: #FFA41E;
     position: absolute;
     right: -14px;
     top: -11px;
+    z-index: 1;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
@@ -134,6 +163,43 @@ $orangeColor: #FFA41E;
         text-decoration: underline;
         font-family: inherit;
         line-height: 1.2;
+    }
+}
+
+.form-banner {
+    display: flex;
+    width: 715px;
+    min-height: 400px;
+    @include adaptiveAllCont('min-height', 400, 300, 1230, 500);
+    @media(max-width: 760px) {
+        width: 100%;
+    }
+    @media (max-width: 660px) {
+        flex-direction: column-reverse;
+        max-width: 400px;
+        min-height: 555px;
+    }
+    img {
+        display: block;
+        border-radius: 0 0 3px 3px;
+    }
+    .form__banner-img {
+        height: 400px;
+        width: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        @media (max-width: 660px) {
+           width: 100%;
+           height: 225px;
+            transform: translateY(-15px);
+        }
+    }
+    .form__cont-wrp {
+        width: 50%;
+        @media (max-width: 660px) {
+            width: 100%;
+         }
     }
 }
 
@@ -217,12 +283,13 @@ $orangeColor: #FFA41E;
     background-color: #f27474;
     border-radius: 15px;
     margin: 0 auto;
-    top: -465px;
+    top: 100px;
     position: relative;
     padding: 0px 10px 15px 10px;
     opacity: 0;
     visibility: hidden;
     transform: scale(0.9);
+    z-index: 120;
     @media(max-width: 515px) {
         width: 95%;
     }

@@ -56,6 +56,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    overflow: hidden;
 }
 main {
     flex: 1 1 auto;
@@ -403,9 +404,10 @@ main {
     font-size: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
-    height: 50px !important;
+    height: 50px;
     background-color: transparent;
     transition: background .3s;
+    padding: 3px 10px;
   }
 
   /*SECTION MAIN========================*/
@@ -436,7 +438,10 @@ main {
       left: 0;
       img {
         width: 100px;
-        @include adaptiveAllCont('width', 100, 70, 1230, 320);
+        @include adaptiveAllCont('width', 100, 70, 1230, 850);
+        @media(max-width: 850px) {
+          display: none;
+        }
       }
     }
     &__cont-wrp {
@@ -508,14 +513,25 @@ main {
 .goods {
   padding: 50px 0;
   position: relative;
+  width: 100%;
+  @include adaptiveAllCont('padding-top', 50, 10, 1230, 320);
 
-  &__img-branch {
+  &__img-strujka {
     position: absolute;
     right: 0;
-    width: 200px;
+    width: 99px;
     top: -70px;
-    transform: rotate(-15deg);
-    @include adaptiveAllCont('width', 200, 140, 1230, 850);
+    @include adaptiveAllCont('width', 99, 70, 1230, 850);
+    @media (max-width: 850px) {
+      display: none;
+    }
+  }
+  &__img-strujka3 {
+    position: absolute;
+    left: 0;
+    width: 120px;
+    bottom: 200px;
+    @include adaptiveAllCont('width', 120, 100, 1230, 850);
     @media (max-width: 850px) {
       display: none;
     }
@@ -523,11 +539,20 @@ main {
   &__pilomat {
     display: flex;
     gap: 25px;
+    @media (max-width: 775px) {
+      flex-direction: column;
+    }
   }
   &__pilomat-img-wrp {
+
+  }
+  &__pilomat-img {
+    max-width: 366px;
+    @include adaptiveAllCont('width', 366, 200, 1230, 320);
   }
   &__right {
     padding-top: 20px;
+    @include adaptiveAllCont('padding-top', 20, 5, 1230, 320);
   }
   &__title {
   }
@@ -539,22 +564,35 @@ main {
   }
   &__goods-wrp {
     display: flex;
-    margin-top: 25px;
     column-gap: 75px;
-    margin-bottom: 69px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    @include adaptiveAllCont('margin-top', 25, 15, 1230, 320);
+    @include adaptiveAllCont('margin-bottom', 50, 0, 1230, 320);
+    @media (max-width: 500px) {
+      column-gap: 40px;
+    }
+    @media (max-width: 430px) {
+      column-gap: 15px;
+      justify-content: space-between;
+    }
+    @media (max-width: 380px) {
+      flex-direction: column;
+    }
   }
   &__desk-wrp {
   }
   &__name-and-size {
-    &:not(:last-child) {
-      margin-bottom: 18px;
+        margin-bottom: 18px;
     }
-  }
   &__name {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 5px;
+    @media(max-width: 500px) {
+      font-size: 16px;
+    }
   }
   &__size {
     font-family: 'Roboto', sans-serif;
@@ -573,6 +611,9 @@ main {
     display: flex;
     margin-top: 20px;
     column-gap: 30px;
+    @media(max-width: 420px) {
+      justify-content: center;
+    }
   }
   &__btn {
     background-color: #fff;
@@ -585,12 +626,121 @@ main {
         color: #fff;
       }
     }
+    @media(max-width: 370px) {
+      width: 100%;
+    }
   }
   .excel-img {
     display: block;
+    @media(max-width: 420px) {
+      display: none;
+    }
   }
 }
+
+.goods-pilomat2-wrp {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 110px;
+  @include adaptiveAllCont('margin-top', 110, 45, 1230, 320);
+  @media (max-width: 610px) {
+    display: block;
+  }
+}
+
+.goods-pilomat2__list {
+
+}
+.goods-pilomat2__list-item {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color: $blackColorLight;
+}
 /*GOODS END------------------------------------------*/
+
+/*BANNER SECTION------------------------------------------*/
+.banner {
+  width: 100%;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  @include adaptiveAllCont('margin-top', 80, 5, 1230, 320);
+  &__container {
+    position: relative;
+  }
+
+  &__cont-wrp {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    position: relative;
+    padding: 60px 0px 60px 0;
+    @include adaptiveAllCont('padding-top', 60, 25, 1230, 320);
+    @include adaptiveAllCont('padding-bottom', 60, 25, 1230, 320);
+    padding-left: 35px;
+    padding-right: 35px;
+    @include adaptiveAllCont('padding-left', 35, 15, 1230, 320);
+    @include adaptiveAllCont('padding-right', 35, 15, 1230, 320);
+    min-height: 483px;
+    @include adaptiveAllCont('min-height', 483, 250, 1230, 320);
+    @media(max-width: 635px) {
+      background-position: center 50%;
+    }
+  }
+  &__branch-img {
+    position: absolute;
+    left: -103px;
+    top: -81px;
+    transform: rotate(-145deg);
+    @media(max-width: 1300px) {
+      display: none;
+    }
+  }
+  &__small-img {
+    position: absolute;
+    right: -9%;
+    bottom: -18%;
+    width: 223px;
+    z-index: 3;
+    @include adaptiveAllCont('width', 223, 70, 1230, 320);
+    @media(max-width: 490px) {
+      display: none;
+    }
+  }
+  &__title {
+    color: #fff;
+  }
+  &__sub-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    margin-top: 15px;
+    max-width: 585px;
+    line-height: 116.666667%; /* 28/24 */
+    @include adaptiveAllCont('font-size', 24, 18, 1230, 320);
+  }
+  &__btn {
+    margin-top: 30px;
+    background-color: $orangeColor;
+    color: #fff;
+    width: 395px;
+    box-shadow: 0px 5px 15px 3px rgba(255, 177, 61, 0.58);
+    @include adaptiveAllCont('margin-top', 30, 15, 1230, 320);
+    &:hover {
+      background-color: #e99517;
+    }
+    @media(max-width: 460px) {
+      width: 100%;
+      height: 45px;
+    }
+  }
+
+}
+
+
+/*BANNER END------------------------------------------*/
 
   .footer {
     height: 150px;

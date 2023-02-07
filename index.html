@@ -83,11 +83,13 @@
          </main>
 
          <section class="goods">
-            <img class="goods__img-branch" src="img/main/pilomat-branch.png" alt="изображение">
+            <img class="goods__img-strujka" src="img/main/strujka2.png" alt="изображение">
+            <img class="goods__img-strujka3" src="img/main/strujka3.png" alt="изображение">
             <div class="container">
-                <div class="goods__pilomat">
+                <!-- Первый блок с товарами -->
+                <div class="goods__pilomat goods-pilomat1">
                     <div class="goods__pilomat-img-wrp">
-                        <img src="img/main/goods1.png" alt="изображение">
+                        <img class="goods__pilomat-img" src="img/main/goods1.png" alt="изображение">
                     </div>
                     <div class="goods__right">
                             <h2 class="goods__title small-title">Пиломатериалы</h2>
@@ -138,6 +140,48 @@
                             </div>
                     </div>
                 </div>
+
+                <!-- Второй блок с товарами -->
+               <div class="goods-pilomat2-wrp">
+                    <div class="goods__pilomat">
+                        <div class="goods__pilomat-img-wrp">
+                            <img class="goods__pilomat-img" src="img/main/goods2.png" alt="изображение">
+                        </div>
+                        <div class="goods__right">
+                                <h2 class="goods__title small-title">Погонаж</h2>
+
+                                <div class="goods__goods-wrp">
+                                    <ul class="goods-pilomat2__list">
+                                        <li class="goods-pilomat2__list-item">Вагонка</li>
+                                        <li class="goods-pilomat2__list-item">Имитация бруса</li>
+                                        <li class="goods-pilomat2__list-item">Доска строганая</li>
+                                        <li class="goods-pilomat2__list-item">Шпунтованная доска</li>
+                                        <li class="goods-pilomat2__list-item">Планкен</li>
+                                        <li class="goods-pilomat2__list-item">Рейка</li>
+                                        <li class="goods-pilomat2__list-item">Брусок</li>
+                                        <li class="goods-pilomat2__list-item">Террасная доска (импрегнированная)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="goods__btn-wrp">
+                                    <button class="btn goods__btn popup-btn" data-btn="pogonaj">Узнать цены</button>
+                                    <img class="excel-img" src="img/main/excel.png" alt="изображение">
+                                </div>
+                        </div>
+                    </div>
+               </div >
+            </div>
+         </section>
+
+         <section class="banner">
+            <div class="container banner__container">
+                <img src="img/main/banner-branch.png" alt="" class="banner__branch-img">
+                <div class="banner__cont-wrp" style="background-image: url(img/main/banner.jpg)">
+                    <img src="img/main/banner-small.png" alt="" class="banner__small-img">
+                    <h2 class="banner__title big-title">Мы <br> контролируем <br> качество леса</h2>
+                    <h3 class="banner__sub-title">Наши сотрудники в Сибири перед отправкой лично проверяют каждую партию леса</h3>
+                    <button class="banner__btn btn popup-btn" data-btn="banner">Получите коммерческое предложение</button>
+                </div>
             </div>
          </section>
 
@@ -146,12 +190,31 @@
     <!-- ПОПАП С ФОРМАМИ --------------------------->
             <div class="overlay">
                 <!--форма главного экрана -->
-                    <form class="form form__main" action="#" data-modal="main">
-                        <span class="cross">&#10006;</span>
-                        <img class="form__img" src="img/main/popup-img-1.jpg" alt="изображение">
+                   <div class="form-wrp" data-modal="main">
+                    <span class="cross">&#10006;</span>
+                        <form class="form form__main" action="#">
+                            <img class="form__img" src="img/main/popup-img-1.jpg" alt="изображение">
+
+                            <div class="form__cont-wrp">
+                                    <h3 class="form__title">Получите каталог всей нашей продукции</h3>
+                                    <span class="form__sub-title">Заполните форму и мы вышлем Вам актуальный каталог продукции с ценами</span>
+                                <label for="input__tel">Введите номер телефона*</label>
+                                <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
+
+                                <button type="submit" class="form__btn">Отправить</button>
+                                <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
+                            </div>
+                        </form>
+                   </div>
+
+                 <!--форма пиломатериалов -->
+               <div class="form-wrp" data-modal="pilomat">
+                <span class="cross">&#10006;</span>
+                     <form class="form form__pilomat" action="#">
+                        <img class="form__img" src="img/main/pilomat-form.png" alt="изображение">
 
                         <div class="form__cont-wrp">
-                                <h3 class="form__title">Получите каталог всей нашей продукции</h3>
+                                <h3 class="form__title">Получите каталог пиломатериала с ценами</h3>
                                 <span class="form__sub-title">Заполните форму и мы вышлем Вам актуальный каталог продукции с ценами</span>
                             <label for="input__tel">Введите номер телефона*</label>
                             <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
@@ -160,39 +223,66 @@
                             <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
                         </div>
                     </form>
+               </div>
 
-                 <!--форма пиломатериалов -->
-                 <form class="form form__pilomat" action="#" data-modal="pilomat">
+                 <!--форма погонажа -->
+               <div class="form-wrp" data-modal="pogonaj">
+                <span class="cross">&#10006;</span>
+                     <form class="form form__pilomat" action="#" >
+                        <img class="form__img" src="img/main/pogonaj-form.jpg" alt="изображение">
+
+                        <div class="form__cont-wrp">
+                                <h3 class="form__title">Получите каталог погонажа с ценами</h3>
+                                <span class="form__sub-title">Заполните форму и мы вышлем Вам актуальный каталог продукции с ценами</span>
+                            <label for="input__tel">Введите номер телефона*</label>
+                            <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
+
+                            <button type="submit" class="form__btn">Отправить</button>
+                            <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
+                        </div>
+                    </form>
+               </div>
+
+                <!-- Форма баннера -->
+               <div class="form-wrp" data-modal="banner">
                     <span class="cross">&#10006;</span>
-                    <img class="form__img" src="img/main/pilomat-form.png" alt="изображение">
+                    <form class="form form__pilomat form-banner" action="#">
+                        <div class="form__cont-wrp">
+                                <h3 class="form__title">Получите предложение</h3>
+                                <span class="form__sub-title">Заполните форму и мы вышлем Вам коммерческое предложение</span>
+                            <label for="input__tel">Введите номер телефона*</label>
+                            <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
 
-                    <div class="form__cont-wrp">
-                            <h3 class="form__title">Получите каталог пиломатериала с ценами</h3>
-                            <span class="form__sub-title">Заполните форму и мы вышлем Вам актуальный каталог продукции с ценами</span>
-                        <label for="input__tel">Введите номер телефона*</label>
-                        <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
+                            <button type="submit" class="form__btn">Отправить</button>
+                            <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
+                        </div>
+                        <!-- <img class="form__img" src="img/main/banner-modal.jpg" alt="изображение"> -->
+                        <div class="form__banner-img" style="background-image: url(img/main/banner-modal.jpg)"></div>
+                    </form>
+               </div>
 
-                        <button type="submit" class="form__btn">Отправить</button>
-                        <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
-                    </div>
-                </form>
 
-                <!-- Окно успешной отправки -->
-                <div class="form__sucsess-window">
-                    <span class="form__sucsess-cross">
-                        <img src="img/main/checked.svg" alt="checked">
-                    </span>
-                    <h3 class="form__sucsess-title">Спасибо! Ваша заявка отправлена. В ближайшее время мы с Вами свяжемся!</h3>
-                    <button class="form__sucsess-btn">OK</button>
-                </div>
 
                 <!-- Окно ошибки -->
-                <div class="form__error-window">
-                    <span class="form__error-cross">&#10006;</span>
-                    <h3 class="form__error-title">Неправильно заполнены поля:</h3>
-                    <span class="form__error-comment">Поле «Введите номер телефона» обязательно для заполнения.</span>
-                    <button class="form__error-btn">OK</button>
-                </div>
+               <div class="overlay2">
+                    <div class="form__error-window">
+                        <span class="form__error-cross">&#10006;</span>
+                        <h3 class="form__error-title">Неправильно заполнены поля:</h3>
+                        <span class="form__error-comment">Поле «Введите номер телефона» обязательно для заполнения.</span>
+                        <button class="form__error-btn">OK</button>
+                    </div>
+               </div>
+
+                  <!-- Окно успешной отправки -->
+                  <div class="overlay3">
+                    <div class="form__sucsess-window">
+                        <span class="form__sucsess-cross">
+                            <img src="img/main/checked.svg" alt="checked">
+                        </span>
+                        <h3 class="form__sucsess-title">Спасибо! Ваша заявка отправлена. В ближайшее время мы с Вами свяжемся!</h3>
+                        <button class="form__sucsess-btn">OK</button>
+                    </div>
+               </div>
             </div>
         <!-- overlay -->
     </div>

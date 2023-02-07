@@ -53,6 +53,8 @@ window.addEventListener('resize', moveMenuEl);
 
 // POPUP С ФОРМАМИ==================================
 const overlay = document.querySelector('.overlay');
+const overlay2 = document.querySelector('.overlay2');
+const overlay3 = document.querySelector('.overlay3');
 const cross = document.querySelector('.cross');
 const popupBtns = document.querySelectorAll('.popup-btn');
 const formErrorWindow = document.querySelector('.form__error-window');
@@ -67,44 +69,39 @@ function showOpenModal() {
         btn.addEventListener('click', () => {
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-            formErrorWindow.style.zIndex = '1';
-            formSucsessWindow.style.zIndex = '1';
         })
     })
     if(cross !== null && cross !== undefined) {
-        cross.addEventListener('click', (e) => {
+        cross.addEventListener('click', () => {
             overlay.classList.remove('active');
             document.body.style.overflow = '';
-            formErrorWindow.style.zIndex = '-1';
-            formSucsessWindow.style.zIndex = '-1';
         })
     }
 
     overlay.addEventListener('click', (e) => {
-        if(!e.target.closest('.form') && !e.target.closest('.form__error-window') && !e.target.closest('.form__sucsess-window')) {
+        if(!e.target.closest('.form') && !e.target.closest('.form__error-window')
+         && !e.target.closest('.form__sucsess-window') && !e.target.closest('.overlay2') && !e.target.closest('.overlay3')) {
             overlay.classList.remove('active');
             document.body.style.overflow = '';
-            formErrorWindow.style.zIndex = '-1';
-            formSucsessWindow.style.zIndex = '-1';
         }
     })
 }
 showOpenModal();
 
 // Открытие формы в зависимости от кнопки===================
-const forms = Array.from(document.querySelectorAll('.form'));
+const forms = Array.from(document.querySelectorAll('.form-wrp'));
 
 function openFormDependeBtn() {
     window.addEventListener('click', (e) => {
         if(e.target.closest('.btn')) {
             forms.forEach(form => {
-                form.style.display = 'none';
+                form.classList.add('active');
             })
         }
         if(e.target.closest('.btn')) {
             forms.find(item => {
                 if(item.dataset.modal == e.target.dataset.btn) {
-                    item.style.display = 'block';
+                    item.classList.remove('active');
                 }
             })
         }
@@ -118,14 +115,25 @@ function checkInputTel() {
         const currentFormBtn = item.querySelector('.form__btn');
         const currentInput = item.querySelector('.input__tel');
 
-        currentFormBtn.addEventListener('click', () => {
+        currentFormBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             if(currentInput.value.length < 14) {
                 formErrorWindow.classList.add('active');
+                overlay2.classList.add('active');
             }
         })
     })
     formErrorBtn.addEventListener('click', () => {
         formErrorWindow.classList.remove('active');
+        overlay2.classList.remove('active');
+    })
+
+    // Закрытие модалки ошибки по клику на её overlay2 или overlay3
+    overlay2.addEventListener('click', (e) => {
+        if(!e.target.closest('.form__error-window')) {
+            overlay2.classList.remove('active');
+            formErrorWindow.classList.remove('active');
+        }
     })
 }
 checkInputTel();

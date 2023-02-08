@@ -745,7 +745,15 @@ main {
 .about{
   margin: 90px 0 50px 0;
   @include adaptiveAllCont('margin-top', 90, 20, 1230, 320);
-
+  position: relative;
+  &__el-img {
+    position: absolute;
+    right: 0;
+    bottom: -46px;
+    width: 170px;
+    z-index: -1;
+    @include adaptiveAllCont('width', 170, 80, 1230, 320);
+  }
   &__cont-wrp {
     display: flex;
     justify-content: center;
@@ -761,14 +769,6 @@ main {
     max-width: 532px;
     @media (max-width: 1170px) {
       flex: 0 1 50%;
-    }
-    p {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      line-height: 137.5%; /* 22/16 */
-      &:not(:last-child) {
-        // margin-bottom: 35px;
-      }
     }
   }
 
@@ -790,7 +790,10 @@ main {
       font-size: 20px;
     }
   }
-  &__text1 {
+  &__text1,  &__text2,   &__text3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 137.5%; /* 22/16 */
   }
   &__text2 {
     margin-top: 30px;
@@ -837,7 +840,6 @@ main {
   }
 }
 
-
 /*swiper=============================*/
 .swiper {
   width: 540px;
@@ -866,8 +868,91 @@ main {
   }
 }
 
-
 /*END ABOUT---------------------------------------*/
+
+/*VIDEO SECTION------------------------------*/
+.video {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  @include adaptiveAllCont('padding-top', 80, 5, 1230, 320);
+
+  &__title {
+    font-size: 32px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+    @include adaptiveAllCont('font-size', 32, 22, 1230, 320);
+
+  }
+
+  &__wrp {
+    width: 720px;
+    height: 405px;
+    margin: 0 auto;
+    @include adaptiveAllCont('height', 405, 230, 1230, 320);
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 755px) {
+      width: 100%;
+    }
+  }
+}
+/*END VIDEO------------------*/
+
+/*ADVANTAGES SECTION---------------------------------------*/
+
+.advantages {
+  margin-top: 90px;
+  margin-bottom: 50px;
+  @include adaptiveAllCont('margin-top', 90, 10, 1230, 320);
+  &__wrp {
+    display: flex;
+    margin: 0 auto;
+    column-gap: 20px;
+    row-gap: 50px;
+    @include adaptiveAllCont('row-gap', 50, 30, 1230, 320);
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 850px;
+    @media(max-width: 865px) {
+      width: 100%;
+    }
+  }
+  &__item {
+    flex: 0 0 31%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media(max-width: 850px) {
+      flex: 0 0 45%;
+    }
+    @media(max-width: 595px) {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+  &__item-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+  &__item-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+/* END ADVANTAGES---------------------------------------*/
 
   .footer {
     height: 150px;

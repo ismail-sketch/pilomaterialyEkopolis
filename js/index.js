@@ -139,6 +139,42 @@ function checkInputTel() {
 checkInputTel();
 // ===================================================================================
 
+// SLIDER=======================================
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+  });
+
+// ОТКРЫТИЕ-ЗАКРЫТИЕ БЛОКА С "ЧИТАТЬ ДАЛЕЕ..."
+const aboutText3 = document.querySelector('.about__text3');
+const aboutReadMoreBtn = document.querySelector('.about__read-more-btn');
+const aboutReadHideBtn = document.querySelector('.about__read-hide-btn');
+
+
+function hideShowText3() {
+    if(aboutReadMoreBtn !== null) {
+        aboutReadMoreBtn.addEventListener('click', () => {
+            aboutText3.style.height = `${aboutText3.scrollHeight}px`;
+            aboutReadHideBtn.classList.add('active');
+            aboutReadMoreBtn.classList.add('active');
+        })
+    }
+    if(aboutReadHideBtn !== null) {
+        aboutReadHideBtn.addEventListener('click', () => {
+            aboutText3.style.height = '';
+            aboutReadHideBtn.classList.remove('active');
+            aboutReadMoreBtn.classList.remove('active');
+        })
+    }
+}
+hideShowText3();
 
 
 // Маска телефона

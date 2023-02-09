@@ -1,0 +1,18 @@
+
+$blackColor: #282828;
+$blackColorLight: #808080;
+$orangeColor: #FFA41E;
+
+//Адаптив, начинающийся с определенной ширины (с ширины ограничивающего контейнера, как правило)
+@mixin adaptiveAllCont($adaptProperty, $maxSize, $minSize, $maxContainer, $minMob) {
+    @media (max-width: #{$maxContainer + px}) {
+        #{$adaptProperty}: calc(#{$minSize + px} + (#{$maxSize - $minSize}) * ((100vw - #{$minMob + px}) / (#{$maxContainer - $minMob})))
+    }
+}
+
+.catalog {
+    width: 100%;
+    padding-top: 139px;
+    padding-bottom: 50px;
+    @include adaptiveAllCont('padding-top', 139, 110, 1230, 320);
+}

@@ -1,0 +1,12 @@
+.catalog {
+  width: 100%;
+  padding-top: 139px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 1230px) {
+  .catalog {
+    padding-top: calc(110px + (29) * ((100vw - 320px) / (910)));
+  }
+}
+/*# sourceMappingURL=catalog.css.map */

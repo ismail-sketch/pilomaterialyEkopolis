@@ -250,9 +250,9 @@
          <section class="video">
            <div class="container">
             <h2 class="video__title">Видео о нашей компании</h2>
-                <div class="video__wrp">
+                <!-- <div class="video__wrp">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/qGrJGvvmyhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                </div> -->
            </div>
          </section>
 
@@ -288,7 +288,67 @@
             </div>
          </section>
 
-         <footer class="footer"></footer>
+         <footer class="footer">
+            <div class="container">
+                <div class="footer__cont-wrp">
+                    <div class="footer__left">
+                       <div class="footer__form-wrp">
+                            <form action="#" class="form footer__form">
+                                    <h3 class="form__title footer__form-title">Нам интересно с вами поработать!</h3>
+                                    <span class="form__sub-title">Мы с удовольствием бросаемся в работу над новыми задачами, обязательно свяжитесь с нами!</span>
+                                    <label for="input__tel">Введите номер телефона*</label>
+                                    <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
+
+                                    <label for="input__tel">Ваше имя</label>
+                                    <input type="text" id="input__name" name="name" class="input__name input-name">
+
+                                    <button type="submit" class="form__btn footer__form-btn">Получить предложение</button>
+                                    <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
+                            </form>
+
+                            <div class="footer__contacts">
+                                <div class="footer__contacts-left">
+                                    <span class="footer__call-to-ac">Позвоните нам!</span>
+                                    <a class="footer__tel" href="tel:+79003077000">+7(900) 307-70-00</a>
+                                    <a class="footer__tel" href="tel:+79586496170">+7(958) 649-61-70</a>
+                                </div>
+                                <div class="footer__contacts-right">
+                                    <span class="footer__call-to-ac">Напишите нам!</span>
+                                    <a href="mailto:info@mai.ru" class="footer__mail">info@mai.ru</a>
+                                    <div class="footer__messend-wrp">
+                                        <a href="#" class="footer__messend-img"><img src="img/main/viber.png" alt="изображение"></a>
+                                        <a href="#" class="footer__messend-img"><img class="footer__messend-img" src="img/main/whatsapp2.png" alt="изображение"></a>
+                                        <a href="#" class="footer__messend-img"><img class="footer__messend-img" src="img/main/telegram.png" alt="изображение"></a>
+                                    </div>
+                                    <span class="footer__we-answ">Ответим в рабочее время в течение15минут</span>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+
+                    <div class="footer__right">
+                        <div class="footer__map-wrp">
+                            <h2 class="footer__title">Крытые склады: Воронеж, Холмистая, 32и</h2>
+                            <p class="footer__text">
+                                Здесь мы храним продукцию камерной сушки:
+                                вагонку, планкен, имитацию бруса,
+                                шпунтованную доску пола, доску камерной сушки, террасную доску, рейку, брусок.
+                            </p>
+                            <div class="footer__map">
+                                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7ecfbeafdfa76086800b891496d1cff2208db18fed71ae469811a4214a0aa599&amp;width=100%&amp;height=250&amp;lang=ru_RU&amp;scroll=false"></script>
+                            </div>
+                        </div>
+                        <div class="footer__map-wrp">
+                            <h2 class="footer__title">Площадка открытого хранения: Воронеж, Антонова-Овсеенко, 37г</h2>
+                            <p class="footer__text">С этого адреса отгружаем обрезную доску и брус естественной влажности.</p>
+                            <div class="footer__map">
+                                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa248d35d968a337a4bf09b35612f9165c0745ea2d2cff97308c4b7f1b93a8ec5&amp;width=100%&amp;height=250&amp;lang=ru_RU&amp;scroll=false"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </footer>
 
     <!-- ПОПАП С ФОРМАМИ --------------------------->
             <div class="overlay">
@@ -304,7 +364,7 @@
                                 <label for="input__tel">Введите номер телефона*</label>
                                 <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
 
-                                <button type="submit" class="form__btn">Отправить</button>
+                                <button type="submit" class="form__btn">Каталог продукции</button>
                                 <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
                             </div>
                         </form>
@@ -322,7 +382,7 @@
                             <label for="input__tel">Введите номер телефона*</label>
                             <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
 
-                            <button type="submit" class="form__btn">Отправить</button>
+                            <button type="submit" class="form__btn">Каталог продукции</button>
                             <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
                         </div>
                     </form>
@@ -340,7 +400,7 @@
                             <label for="input__tel">Введите номер телефона*</label>
                             <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
 
-                            <button type="submit" class="form__btn">Отправить</button>
+                            <button type="submit" class="form__btn">Каталог продукции</button>
                             <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
                         </div>
                     </form>
@@ -356,38 +416,36 @@
                             <label for="input__tel">Введите номер телефона*</label>
                             <input type="text" id="input__tel" name="tel" class="input__tel input-tel">
 
-                            <button type="submit" class="form__btn">Отправить</button>
+                            <button type="submit" class="form__btn">Получить предложение</button>
                             <p class="form__pol-conf">Нажимая на кнопку, вы даёте согласие на <a href="#">обработку персональных данных</a></p>
                         </div>
                         <!-- <img class="form__img" src="img/main/banner-modal.jpg" alt="изображение"> -->
                         <div class="form__banner-img" style="background-image: url(img/main/banner-modal.jpg)"></div>
                     </form>
                </div>
-
-
-
-                <!-- Окно ошибки -->
-               <div class="overlay2">
-                    <div class="form__error-window">
-                        <span class="form__error-cross">&#10006;</span>
-                        <h3 class="form__error-title">Неправильно заполнены поля:</h3>
-                        <span class="form__error-comment">Поле «Введите номер телефона» обязательно для заполнения.</span>
-                        <button class="form__error-btn">OK</button>
-                    </div>
-               </div>
-
-                  <!-- Окно успешной отправки -->
-                  <div class="overlay3">
-                    <div class="form__sucsess-window">
-                        <span class="form__sucsess-cross">
-                            <img src="img/main/checked.svg" alt="checked">
-                        </span>
-                        <h3 class="form__sucsess-title">Спасибо! Ваша заявка отправлена. В ближайшее время мы с Вами свяжемся!</h3>
-                        <button class="form__sucsess-btn">OK</button>
-                    </div>
-               </div>
             </div>
         <!-- overlay -->
+
+        <!-- Окно успешной отправки -->
+           <div class="overlay3">
+                <div class="form__sucsess-window">
+                    <span class="form__sucsess-cross">
+                        <img src="img/main/checked.svg" alt="checked">
+                    </span>
+                    <h3 class="form__sucsess-title">Спасибо! Ваша заявка отправлена. В ближайшее время мы с Вами свяжемся!</h3>
+                    <button class="form__sucsess-btn">OK</button>
+                </div>
+            </div>
+
+           <!-- Окно ошибки -->
+            <div class="overlay2">
+                <div class="form__error-window">
+                    <span class="form__error-cross">&#10006;</span>
+                    <h3 class="form__error-title">Неправильно заполнены поля:</h3>
+                    <span class="form__error-comment">Поле «Введите номер телефона» обязательно для заполнения.</span>
+                    <button class="form__error-btn">OK</button>
+                </div>
+            </div>
     </div>
 <!-- wrapper -->
 

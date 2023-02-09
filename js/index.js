@@ -62,6 +62,7 @@ const formSucsessWindow = document.querySelector('.form__sucsess-window');
 const form = document.querySelectorAll('.form');
 const formErrorBtn = document.querySelector('.form__error-btn');
 const formSucsessBtn = document.querySelector('.form__sucsess-btn');
+const footerFormBtn = document.querySelector('.footer__form-btn');
 
 // Открытие закрытие модалки===========================
 function showOpenModal() {
@@ -122,6 +123,14 @@ function checkInputTel() {
                 overlay2.classList.add('active');
             }
         })
+        // Проверка на заполненность телефона в форме в подвале======
+        footerFormBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(currentInput.value.length < 14) {
+            formErrorWindow.classList.add('active');
+            overlay2.classList.add('active');
+        }
+    })
     })
     formErrorBtn.addEventListener('click', () => {
         formErrorWindow.classList.remove('active');

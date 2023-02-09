@@ -41,6 +41,7 @@ $orangeColor: #FFA41E;
     left: 0;
     z-index: 110;
     display: none;
+    background-color: rgba(29, 29, 29, 0.505);
     &.active {
         display: block;
     }

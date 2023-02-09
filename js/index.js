@@ -119,18 +119,11 @@ function checkInputTel() {
         currentFormBtn.addEventListener('click', (e) => {
             e.preventDefault();
             if(currentInput.value.length < 14) {
+                console.log(currentInput)
                 formErrorWindow.classList.add('active');
                 overlay2.classList.add('active');
             }
         })
-        // Проверка на заполненность телефона в форме в подвале======
-        footerFormBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if(currentInput.value.length < 14) {
-            formErrorWindow.classList.add('active');
-            overlay2.classList.add('active');
-        }
-    })
     })
     formErrorBtn.addEventListener('click', () => {
         formErrorWindow.classList.remove('active');

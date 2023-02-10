@@ -15,4 +15,39 @@ $orangeColor: #FFA41E;
     padding-top: 139px;
     padding-bottom: 50px;
     @include adaptiveAllCont('padding-top', 139, 110, 1230, 320);
+
+    &__cont-wrp {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__cont-left {
+    }
+    &__sidebar {
+    }
+    &__sidebar-head {
+    }
+    &__sidebar-list {
+    }
+    &__sidebar-filter {
+    }
+    &__cont-right {
+    }
+    &__right-head {
+    }
+    &__вreadcrumbs {
+    }
+    &__вreadcrumbs-main {
+    }
+    &__вreadcrumbs-arrow {
+    }
+    &__вreadcrumbs-goods {
+    }
+    &__cont-right-filters {
+    }
+    &__sort {
+    }
+    &__sort-menu {
+    }
+}
+.arrow-sort {
 }

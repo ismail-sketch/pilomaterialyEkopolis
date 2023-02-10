@@ -40,15 +40,15 @@ if (isMobile) {
 }
 
 // Перемещение элементов в меню
-function moveMenuEl() {
-    if(window.innerWidth < 750) {
-        menuList.insertAdjacentElement('beforeend', headerContacts);
-    } else {
-        headerContainer.insertAdjacentElement('beforeend', headerContacts);
-    }
-}
-moveMenuEl();
-window.addEventListener('resize', moveMenuEl);
+// function moveMenuEl() {
+//     if(window.innerWidth < 750) {
+//         menuList.insertAdjacentElement('beforeend', headerContacts);
+//     } else {
+//         headerContainer.insertAdjacentElement('beforeend', headerContacts);
+//     }
+// }
+// moveMenuEl();
+// window.addEventListener('resize', moveMenuEl);
 
 
 // POPUP С ФОРМАМИ==================================

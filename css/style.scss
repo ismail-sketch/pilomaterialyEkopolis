@@ -75,13 +75,14 @@ main {
 /*------------------------------------------------*/
 
 .header {
-    min-height: 85px;
+    height: 85px;
     background-color: #fff;
     width: 100%;
     z-index: 4;
     justify-content: space-between;
     padding: 5px 0;
     position: fixed;
+    align-items: center;
     left: 0;
     top: 0;
     border-bottom: 1px solid #b0b0b0;
@@ -95,8 +96,13 @@ main {
       align-items: center;
     }
   }
-
+  .header__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
   .header__logo .logo {
+
     span {
         color: $blackColorLight;
         display: block;
@@ -106,11 +112,25 @@ main {
         font-size: 12px;
     }
     img {
-        width: 210px;
+        width: 248px;
+        transform: translateY(-10px);
         @include adaptiveAllCont('width', 210, 180, 1230, 320);
     }
   }
-
+  .vetical-line {
+    width: 1px;
+    height: 60px;
+    background-color: #cccccc;
+  }
+  .header__job-graphic {
+    position: relative;
+    span {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+  }
   .header__contacts {
     display: flex;
     align-items: center;
@@ -120,13 +140,13 @@ main {
     }
     a {
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 400;
         font-family: 'Roboto', sans-serif;
         color: $blackColor;
     }
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 200px) {
     .header__contacts {
       margin-right: 45px;
     }
@@ -152,7 +172,7 @@ main {
   .header__contacts-wa {
         display: flex;
         align-items: center;
-        margin-right: 18px;
+        margin-right: 10px;
    }
    .header__whatsap {
     color: #3E7A4A;
@@ -162,19 +182,11 @@ main {
   }
   .header__contacts-tel1, .header__contacts-tel2 {
     text-decoration: underline;
+    display: block;
   }
    .header__contacts-tel1 {
         margin-right: 10px;
-        &::after {
-            content: '';
-            width: 1px;
-            height: 20px;
-            background-color: $blackColorLight;
-            transform: translate(5px, -1px);
-            @media (max-width: 435px) {
-                display: none;
-            }
-        }
+        margin-bottom: 10px;
    }
 
   .header-container {
@@ -190,7 +202,7 @@ main {
     height: 100%;
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 200px) {
     .header-container {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -199,6 +211,19 @@ main {
           -ms-flex-pack: justify;
               justify-content: space-between;
       width: 100%;
+    }
+  }
+  .menu__btn {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #2F6A22;
+    display: flex;
+    transition: background .3s;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: #2F6A22;
+      color: #fff !important;
     }
   }
 
@@ -213,7 +238,7 @@ main {
     cursor: pointer;
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 200px) {
     .burger {
       display: block;
     }
@@ -285,7 +310,7 @@ main {
     }
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 200px) {
     .menu {
       overflow: auto;
       position: fixed;
@@ -308,7 +333,7 @@ main {
     }
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 200px) {
     .menu {
       width: 100%;
     }
@@ -329,7 +354,7 @@ main {
     }
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 200px) {
     .menu__list {
       display: block;
       min-height: 100%;
@@ -339,7 +364,7 @@ main {
 
 
 
-  @media (max-width: 950px) {
+  @media (max-width: 200px) {
     .menu__item:not(:last-child) {
       margin-bottom: 30px;
     }
@@ -347,7 +372,7 @@ main {
 
   .menu__item a {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     transition: color .3s;
     color: $blackColor;
     text-transform: uppercase;
@@ -359,7 +384,7 @@ main {
         box-shadow: -1px 4px 14px 0px rgba(34, 60, 80, 0.08);
         max-height: 0;
         overflow: hidden;
-        transition: all .5s;
+        transition: all .3s;
         padding: 0 10px;
 
         &.active {
@@ -976,7 +1001,7 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    @media (max-width: 950px) {
+    @media (max-width: 200px) {
       justify-content: center;
     }
     @media (max-width: 700px) {
@@ -986,7 +1011,7 @@ main {
 
   &__left {
     max-width: 370px;
-    @media(max-width: 950px) {
+    @media(max-width: 200px) {
       max-width: 300px;
     }
     @media (max-width: 700px) {
@@ -1008,7 +1033,7 @@ main {
     box-shadow: 0px 4px 16px 5px rgba(0, 0, 0, 0.07);
     padding: 40px;
     margin-top: 20px;
-    @media(max-width: 950px) {
+    @media(max-width: 200px) {
       padding: 20px 15px;
       min-height: 430px;
     }
@@ -1046,7 +1071,7 @@ main {
     justify-content: space-between;
     width: 400px;
     gap: 20px;
-    @media(max-width: 950px) {
+    @media(max-width: 200px) {
       flex-direction: column;
       justify-content: flex-start;
     }

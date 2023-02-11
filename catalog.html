@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/nouislider.min.css">
     <link rel="stylesheet" href="css/catalog.css">
     <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/style.css">
@@ -127,34 +128,120 @@
                                 <li><a href="#">Брусок</a></li>
                                 <li><a href="#">Террасная доска (импрегнированная)</a></li>
                             </ul>
-                            <div class="catalog__sidebar-filter">
-                                <div class="catalog__sidebar-head">
-                                    <img src="img/catalog/filter2.svg" alt="изображение">
-                                    <h3>Фильтр подбора</h3>
+
+                            <div class="range-slider-filter">
+                                <div class="catalog__sidebar-filter">
+                                    <div class="catalog__sidebar-head-filter">
+                                        <img src="img/catalog/filter2.svg" alt="изображение">
+                                        <h3>Фильтр подбора</h3>
+                                    </div>
+                                </div>
+                                <h3>Ширина мм</h3>
+                                <div class="inputs-wrp">
+                                    <span>от</span>
+                                    <input id="input-price0" placeholder="100" min="100" max="200" class="input-price" type="number">
+                                    <span>до</span>
+                                    <input id="input-price1" placeholder="200" min="100" max="200" class="input-price" type="number">
+                                </div>
+                                <div class="rangeSlider"></div>
+                                <div class="filter-btns-wrp">
+                                    <button class="show-results-btn">Показать</button>
+                                    <button class="reset-results-btn">Сбросить фильтр</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+
                     <div class="catalog__cont-right">
+                        <div class="catalog__search">
+                            <div class="catalog__search-socials-wrp">
+                                <div class="catalog__search-wrp">
+                                    <input class="catalog__search-input" type="search">
+                                    <img src="img/catalog/search.svg" alt="изображение">
+                                </div>
+                                <div class="catalog__socials-wrp">
+                                    <svg class="catalog__socials-whatsapp"  width="30" height="30" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.8437 5.11456C18.8887 4.1499 17.7512 3.38505 16.4975 2.86462C15.2438 2.34418 13.899 2.07859 12.5416 2.08331C6.85413 2.08331 2.21871 6.71873 2.21871 12.4062C2.21871 14.2291 2.69788 16 3.59371 17.5625L2.13538 22.9166L7.60413 21.4791C9.11454 22.3021 10.8125 22.7396 12.5416 22.7396C18.2291 22.7396 22.8645 18.1041 22.8645 12.4166C22.8645 9.65623 21.7916 7.06248 19.8437 5.11456ZM12.5416 20.9896C11 20.9896 9.48954 20.5729 8.16663 19.7916L7.85413 19.6041L4.60413 20.4583L5.46871 17.2916L5.26038 16.9687C4.40386 15.601 3.94906 14.02 3.94788 12.4062C3.94788 7.67706 7.80204 3.8229 12.5312 3.8229C14.8229 3.8229 16.9791 4.71873 18.5937 6.34373C19.3932 7.13953 20.0267 8.08609 20.4577 9.12855C20.8886 10.171 21.1083 11.2886 21.1041 12.4166C21.125 17.1458 17.2708 20.9896 12.5416 20.9896ZM17.25 14.5729C16.9895 14.4479 15.7187 13.8229 15.4895 13.7291C15.25 13.6458 15.0833 13.6041 14.9062 13.8541C14.7291 14.1146 14.2395 14.6979 14.0937 14.8646C13.9479 15.0416 13.7916 15.0625 13.5312 14.9271C13.2708 14.8021 12.4375 14.5208 11.4583 13.6458C10.6875 12.9583 10.177 12.1146 10.0208 11.8541C9.87496 11.5937 9.99996 11.4583 10.1354 11.3229C10.25 11.2083 10.3958 11.0208 10.5208 10.875C10.6458 10.7291 10.6979 10.6146 10.7812 10.4479C10.8645 10.2708 10.8229 10.125 10.7604 9.99998C10.6979 9.87498 10.177 8.60415 9.96871 8.08331C9.76038 7.58331 9.54163 7.64581 9.38538 7.6354H8.88538C8.70829 7.6354 8.43746 7.6979 8.19788 7.95831C7.96871 8.21873 7.30204 8.84373 7.30204 10.1146C7.30204 11.3854 8.22913 12.6146 8.35413 12.7812C8.47913 12.9583 10.177 15.5625 12.7604 16.6771C13.375 16.9479 13.8541 17.1041 14.2291 17.2187C14.8437 17.4166 15.4062 17.3854 15.8541 17.3229C16.3541 17.25 17.3854 16.6979 17.5937 16.0937C17.8125 15.4896 17.8125 14.9791 17.7395 14.8646C17.6666 14.75 17.5104 14.6979 17.25 14.5729Z" fill="#808080"/>
+                                    </svg>
+
+                                    <svg class="catalog__socials-youtube" width="30" height="30" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.8809 6.81641C22.7911 6.45637 22.6154 6.12347 22.3688 5.84624C22.1221 5.569 21.812 5.3557 21.4648 5.22461C18.125 3.93555 12.793 3.94531 12.5 3.94531C12.207 3.94531 6.875 3.93555 3.53516 5.22461C3.18803 5.3557 2.87786 5.569 2.63124 5.84624C2.38462 6.12347 2.2089 6.45637 2.11914 6.81641C1.86523 7.78321 1.5625 9.56055 1.5625 12.5C1.5625 15.4395 1.86523 17.2168 2.11914 18.1836C2.2089 18.5436 2.38462 18.8765 2.63124 19.1538C2.87786 19.431 3.18803 19.6443 3.53516 19.7754C6.73828 21.0156 11.7578 21.0547 12.4316 21.0547H12.5684C13.2422 21.0547 18.2617 21.0156 21.4648 19.7754C21.812 19.6443 22.1221 19.431 22.3688 19.1538C22.6154 18.8765 22.7911 18.5436 22.8809 18.1836C23.1348 17.2168 23.4375 15.4395 23.4375 12.5C23.4375 9.56055 23.1348 7.78321 22.8809 6.81641ZM15.8398 12.8223L11.1523 15.9473C11.0902 15.993 11.0147 16.017 10.9375 16.0156C10.8728 16.0132 10.8095 15.9965 10.752 15.9668C10.6895 15.9343 10.6373 15.8852 10.6011 15.8249C10.5649 15.7645 10.5462 15.6954 10.5469 15.625V9.375C10.5462 9.30465 10.5649 9.23547 10.6011 9.17513C10.6373 9.1148 10.6895 9.06567 10.752 9.0332C10.8142 8.99998 10.8843 8.98425 10.9548 8.98769C11.0253 8.99113 11.0936 9.01361 11.1523 9.05274L15.8398 12.1777C15.8943 12.212 15.9392 12.2596 15.9703 12.316C16.0014 12.3723 16.0177 12.4356 16.0177 12.5C16.0177 12.5644 16.0014 12.6277 15.9703 12.6841C15.9392 12.7404 15.8943 12.788 15.8398 12.8223Z" fill="#808080"/>
+                                    </svg>
+
+                                    <svg class="catalog__socials-telegram width="30" height="30" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_201_4)">
+                                        <path d="M22.9705 2.21792L0.821644 10.8032C-0.0696642 11.203 -0.371129 12.0036 0.606215 12.4381L6.28834 14.2532L20.027 5.71855C20.7772 5.18276 21.5451 5.32563 20.8843 5.91504L9.08463 16.6541L8.71398 21.1988C9.05729 21.9005 9.6859 21.9038 10.0869 21.555L13.3514 18.45L18.9425 22.6584C20.2411 23.4312 20.9477 22.9325 21.2271 21.5161L24.8943 4.06152C25.2751 2.31812 24.6257 1.54995 22.9705 2.21792Z" fill="#808080"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_201_4">
+                                        <rect width="25" height="25" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div>
                         <div class="catalog__right-head">
                            <div class="catalog__вreadcrumbs">
                                 <span class="catalog__вreadcrumbs-main">Главная</span>
                                 <span class="catalog__вreadcrumbs-arrow">&rarr;</span>
                                 <span class="catalog__вreadcrumbs-goods">Брус</span>
                            </div>
+                            <div class="catalog__title-wrp">
+                                <h3 class="catalog__title small-title">Брус</h3>
+                                <p class="catalog__sub-title">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Laboriosam voluptates consequuntur quisquam, deserunt
+                                    autem deleniti dignissimos magnam nemo?
+                                </p>
+                            </div>
+
                         </div>
-                        <div class="catalog__cont-right-filters">
-                            <div class="catalog__sort">
-                                <span>Сортировать</span>
-                                <div class="catalog__sort-menu">
-                                    <span>Название</span>
-                                    <img src="img/catalog/burger-sort.svg" alt="изображение">
-                                    <img src="img/catalog/arrow-sort.svg" alt="изображение" class="arrow-sort">
+                        <div class="range-slider-filter range-slider-filter-mob">
+                            <div class="catalog__sidebar-filter">
+                                <div class="catalog__sidebar-head-filter">
+                                    <img src="img/catalog/filter2.svg" alt="изображение">
+                                    <h3>Фильтр подбора</h3>
+                                </div>
+                            </div>
+                            <div class="filter-for-show-hide">
+                                <h3>Ширина мм</h3>
+                                <div class="inputs-wrp">
+                                    <span>от</span>
+                                    <input id="input-price0" placeholder="100" min="100" max="200" class="input-price" type="number">
+                                    <span>до</span>
+                                    <input id="input-price1" placeholder="200" min="100" max="200" class="input-price" type="number">
+                                </div>
+                                <div class="rangeSlider"></div>
+                                <div class="filter-btns-wrp">
+                                    <button class="show-results-btn">Показать</button>
+                                    <button class="reset-results-btn">Сбросить фильтр</button>
                                 </div>
                             </div>
                         </div>
+                        <div class="catalog__cont-right-filters">
+                            <div class="catalog__sort">
+                                <span>Сортировать:</span>
+                                <div class="catalog__sort-menu">
+                                   <div class="catalog__sort-images">
+                                        <div>
+                                            <span>Название</span>
+                                            <img class="catalog__sort-burger" src="img/catalog/burger-sort.svg" alt="изображение">
+                                        </div>
+                                        <img class="catalog__sort-arrow" src="img/catalog/arrow-sort.svg" alt="изображение" class="arrow-sort">
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="catalog__sort-icons">
+                                <img src="img/catalog/sort1.svg" alt="изображение">
+                                <img src="img/catalog/sort2.svg" alt="изображение">
+                                <img src="img/catalog/sort3.svg" alt="изображение">
+                            </div>
+                        </div>
                     </div>
+                </div>
                 </div>
             </div>
         </main>
@@ -319,7 +406,7 @@
             </div>
     </div>
 <!-- wrapper -->
-
+<script src="js/nouislider.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="js/index.js"></script>
 </body>

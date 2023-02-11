@@ -5,6 +5,7 @@ const headerContacts = document.querySelector('.header__contacts');
 const burgerSpan = document.querySelectorAll('.burger span');
 const menu = document.querySelector('.menu');
 const menuList = document.querySelector('.menu__list');
+const headerJobGraphic = document.querySelector('.header__job-graphic')
 
 
 
@@ -30,6 +31,7 @@ window.addEventListener('click', (e) => {
 const subMenu = document.querySelector('.sub-menu');
 const clickSubmenu = document.querySelector('.click-submenu');
 const triangle = document.querySelector('.triangle');
+const verticalLineLast = document.querySelector('vertical-line-last');
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
 
 if (isMobile) {
@@ -38,17 +40,6 @@ if (isMobile) {
         triangle.classList.toggle('active');
     })
 }
-
-// Перемещение элементов в меню
-// function moveMenuEl() {
-//     if(window.innerWidth < 750) {
-//         menuList.insertAdjacentElement('beforeend', headerContacts);
-//     } else {
-//         headerContainer.insertAdjacentElement('beforeend', headerContacts);
-//     }
-// }
-// moveMenuEl();
-// window.addEventListener('resize', moveMenuEl);
 
 
 // POPUP С ФОРМАМИ==================================

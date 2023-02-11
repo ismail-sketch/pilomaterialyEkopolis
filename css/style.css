@@ -113,7 +113,7 @@ main {
 
 /*------------------------------------------------*/
 .header {
-  height: 85px;
+  height: 95px;
   background-color: #fff;
   width: 100%;
   z-index: 4;
@@ -152,6 +152,18 @@ main {
           column-gap: 20px;
 }
 
+@media (max-width: 800px) {
+  .header__logo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .header__logo .logo span {
   color: #808080;
   display: block;
@@ -169,7 +181,7 @@ main {
 
 @media (max-width: 1230px) {
   .header__logo .logo img {
-    width: calc(180px + (30) * ((100vw - 320px) / (910)));
+    width: calc(220px + (28) * ((100vw - 320px) / (910)));
   }
 }
 
@@ -177,6 +189,12 @@ main {
   width: 1px;
   height: 60px;
   background-color: #cccccc;
+}
+
+@media (max-width: 1070px) {
+  .vetical-line {
+    display: none;
+  }
 }
 
 .header__job-graphic {
@@ -216,7 +234,7 @@ main {
   color: #282828;
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .header__contacts {
     margin-right: 45px;
   }
@@ -235,7 +253,8 @@ main {
 }
 
 @media (max-width: 435px) {
-  .header__contacts {
+  __tel-wrp
+.header__contacts {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -270,7 +289,6 @@ main {
 }
 
 .header__contacts-tel1 {
-  margin-right: 10px;
   margin-bottom: 10px;
 }
 
@@ -278,6 +296,8 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -287,7 +307,7 @@ main {
   height: 100%;
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .header-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -332,7 +352,7 @@ main {
   cursor: pointer;
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .burger {
     display: block;
   }
@@ -340,7 +360,7 @@ main {
 
 @media (max-width: 500px) {
   .burger {
-    top: 20px;
+    top: 24px;
   }
 }
 
@@ -408,7 +428,7 @@ main {
           transform: rotate(-180deg);
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .menu {
     overflow: auto;
     position: fixed;
@@ -433,7 +453,7 @@ main {
   }
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .menu {
     width: 100%;
   }
@@ -454,34 +474,35 @@ main {
       flex-wrap: wrap;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1070px) {
   .menu__list {
     -webkit-column-gap: 15px;
             column-gap: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100%;
+    padding: 20px 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
-@media (max-width: 1140px) {
+@media (max-width: 560px) {
   .menu__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 10px;
-  }
-}
-
-@media (max-width: 200px) {
-  .menu__list {
-    display: block;
-    min-height: 100%;
-    padding: 20px 0;
-  }
-}
-
-@media (max-width: 200px) {
-  .menu__item:not(:last-child) {
-    margin-bottom: 30px;
+    row-gap: 20px;
   }
 }
 
@@ -505,6 +526,7 @@ main {
   -webkit-transition: all .3s;
   transition: all .3s;
   padding: 0 10px;
+  list-style: none;
 }
 
 .sub-menu.active {
@@ -519,6 +541,13 @@ main {
   border-bottom: 1px solid #b0b0b0;
   padding-bottom: 7px;
   margin-right: 0;
+  list-style: none !important;
+}
+
+.sub-menu .menu__item::marker {
+  display: none !important;
+  position: absolute;
+  background-color: #fff;
 }
 
 .sub-menu .menu__item a {
@@ -551,6 +580,71 @@ main {
   -webkit-transition: background .3s;
   transition: background .3s;
   padding: 3px 10px;
+}
+
+@media (max-width: 1070px) {
+  .header-grafic-deskt, .header-contacts-deskt {
+    display: none;
+  }
+}
+
+.header-grafic-mob, .header-contacts-mob {
+  display: none;
+}
+
+@media (max-width: 1070px) {
+  .header-grafic-mob, .header-contacts-mob {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 1070px) {
+  .header-grafic-mob {
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-contacts-mob {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    row-gap: 15px;
+  }
+}
+
+@media (max-width: 1070px) {
+  .click-submenu-desk {
+    display: none;
+  }
+}
+
+@media (max-width: 585px) {
+  .click-submenu-desk {
+    display: block;
+  }
+}
+
+.click-submenu-mob {
+  display: none;
+}
+
+@media (max-width: 1070px) {
+  .click-submenu-mob {
+    display: block;
+  }
+}
+
+@media (max-width: 585px) {
+  .click-submenu-mob {
+    display: none;
+  }
 }
 
 /*SECTION MAIN========================*/
@@ -1484,7 +1578,7 @@ main {
   gap: 20px;
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .footer__cont-wrp {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1505,7 +1599,7 @@ main {
   max-width: 370px;
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .footer__left {
     max-width: 300px;
   }
@@ -1545,7 +1639,7 @@ main {
   margin-top: 20px;
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .footer__form {
     padding: 20px 15px;
     min-height: 430px;
@@ -1597,7 +1691,7 @@ main {
   gap: 20px;
 }
 
-@media (max-width: 200px) {
+@media ((max-width: 1070px)) {
   .footer__contacts {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

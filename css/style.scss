@@ -375,8 +375,10 @@ main {
     text-transform: uppercase;
     position: relative;
   }
+
   .sub-menu {
         position: absolute;
+        z-index: 1;
         background-color: #fff;
         box-shadow: -1px 4px 14px 0px rgba(34, 60, 80, 0.08);
         max-height: 0;

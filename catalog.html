@@ -45,10 +45,10 @@
                    </div>
                 </div>
                 <li class="menu__item click-submenu click-submenu-mob">
-                    <a class="menu__btn" href="catalog.html">КАТАЛОГ</a>
+                    <a class="menu__btn">КАТАЛОГ</a>
                     <!-- <span class="triangle"></span> -->
                     <ul class="sub-menu">
-                        <li class="menu__item"><a href="#">Доска обрезная</a></li>
+                        <li class="menu__item"><a href="catalog.html">Доска обрезная</a></li>
                         <li class="menu__item"><a href="#">Брус обрезной</a></li>
                         <li class="menu__item"><a href="#">Вагонка</a></li>
                         <li class="menu__item"><a href="#">Имитация бруса</a></li>
@@ -70,10 +70,10 @@
                          <ul class="menu__list">
                              <!-- <li class="menu__item"><a href="#">КАТАЛОГ</a></li> -->
                              <li class="menu__item click-submenu click-submenu-desk">
-                                <a class="menu__btn" href="catalog.html">КАТАЛОГ</a>
+                                <a class="menu__btn">КАТАЛОГ</a>
                                 <!-- <span class="triangle"></span> -->
                                 <ul class="sub-menu">
-                                    <li class="menu__item"><a href="#">Доска обрезная</a></li>
+                                    <li class="menu__item"><a href="catalog.html">Доска обрезная</a></li>
                                     <li class="menu__item"><a href="#">Брус обрезной</a></li>
                                     <li class="menu__item"><a href="#">Вагонка</a></li>
                                     <li class="menu__item"><a href="#">Имитация бруса</a></li>
@@ -151,7 +151,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div class="catalog__cont-right">
                         <div class="catalog__search">
@@ -235,14 +234,134 @@
                                 </div>
                             </div>
                             <div class="catalog__sort-icons">
-                                <img src="img/catalog/sort1.svg" alt="изображение">
-                                <img src="img/catalog/sort2.svg" alt="изображение">
-                                <img src="img/catalog/sort3.svg" alt="изображение">
+                                <span class="sort-img-bg1">
+                                    <img src="img/catalog/sort1.svg" alt="изображение">
+                                </span>
+                                <span class="sort-img-bg2 active"><img src="img/catalog/sort2.svg" alt="изображение"></span>
+                                <!-- <img src="img/catalog/sort3.svg" alt="изображение"> -->
                             </div>
                         </div>
+                        <!-- Карточки товаров -->
+                        <div class="catalog__cards-wrp">
+                            <div class="catalog__card-item">
+                                <div class="catalog__cards-img-wrp">
+                                    <img src="img/catalog/card-img.jpg" alt="изображение">
+                                </div>
+
+                              <div class="catalog__card-text-wrp">
+                                    <div class="catalog__card-size-title">
+                                        <div class="catalog__card-size">
+                                            <h3 class="catalog__card-title">Брус</h3>
+                                            <span class="catalog__size-title">40x100x6000</span>
+                                        </div>
+                                        <div class="catalog__size-length catalog__size">Длина: <span>6000</span> мм</div>
+                                        <div class="catalog__size-width catalog__size">Ширина: <span>100</span> мм</div>
+                                        <div class="catalog__size-thickness catalog__size">Толщина: <span>100</span> мм</div>
+                                    </div>
+
+                                    <div class="catalog__card-price-btn">
+                                       <div class="catalog__card-price-wrp">
+                                            <div class="catalog__card-pm">ПМ: <span>30 ₽</span></div>
+                                            <div class="catalog__card-one">1 шт: <span>80 ₽</span></div>
+                                            <div class="catalog__card-m3">м3: <span>14 700 ₽</span></div>
+                                            <div class="catalog__card-m2">м2: <span>300 ₽</span></div>
+                                       </div>
+
+                                        <button class="catalog__card-btn btn popup-btn" data-btn="main">Заказать</button>
+                                    </div>
+                              </div>
+                            </div>
+
+                            <div class="catalog__card-item">
+                                <div class="catalog__cards-img-wrp">
+                                    <img src="img/catalog/card-img.jpg" alt="изображение">
+                                </div>
+
+                              <div class="catalog__card-text-wrp">
+                                    <div class="catalog__card-size-title">
+                                        <div class="catalog__card-size">
+                                            <h3 class="catalog__card-title">Брус</h3>
+                                            <span class="catalog__size-title">40x100x6000</span>
+                                        </div>
+                                        <div class="catalog__size-length catalog__size">Длина: <span>6000</span> мм</div>
+                                        <div class="catalog__size-width catalog__size">Ширина: <span>100</span> мм</div>
+                                        <div class="catalog__size-thickness catalog__size">Толщина: <span>100</span> мм</div>
+                                    </div>
+
+                                    <div class="catalog__card-price-btn">
+                                       <div class="catalog__card-price-wrp">
+                                            <div class="catalog__card-pm">ПМ: <span>30 ₽</span></div>
+                                            <div class="catalog__card-one">1 шт: <span>80 ₽</span></div>
+                                            <div class="catalog__card-m3">м3: <span>14 700 ₽</span></div>
+                                            <div class="catalog__card-m2">м2: <span>300 ₽</span></div>
+                                       </div>
+
+                                        <button class="catalog__card-btn btn popup-btn" data-btn="main">Заказать</button>
+                                    </div>
+                              </div>
+                            </div>
+
+                            <div class="catalog__card-item">
+                                <div class="catalog__cards-img-wrp">
+                                    <img src="img/catalog/card-img.jpg" alt="изображение">
+                                </div>
+
+                              <div class="catalog__card-text-wrp">
+                                    <div class="catalog__card-size-title">
+                                        <div class="catalog__card-size">
+                                            <h3 class="catalog__card-title">Брус</h3>
+                                            <span class="catalog__size-title">40x100x6000</span>
+                                        </div>
+                                        <div class="catalog__size-length catalog__size">Длина: <span>6000</span> мм</div>
+                                        <div class="catalog__size-width catalog__size">Ширина: <span>100</span> мм</div>
+                                        <div class="catalog__size-thickness catalog__size">Толщина: <span>100</span> мм</div>
+                                    </div>
+
+                                    <div class="catalog__card-price-btn">
+                                       <div class="catalog__card-price-wrp">
+                                            <div class="catalog__card-pm">ПМ: <span>30 ₽</span></div>
+                                            <div class="catalog__card-one">1 шт: <span>80 ₽</span></div>
+                                            <div class="catalog__card-m3">м3: <span>14 700 ₽</span></div>
+                                            <div class="catalog__card-m2">м2: <span>300 ₽</span></div>
+                                       </div>
+
+                                        <button class="catalog__card-btn btn popup-btn" data-btn="main">Заказать</button>
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="catalog__card-item">
+                                <div class="catalog__cards-img-wrp">
+                                    <img src="img/catalog/card-img.jpg" alt="изображение">
+                                </div>
+
+                              <div class="catalog__card-text-wrp">
+                                    <div class="catalog__card-size-title">
+                                        <div class="catalog__card-size">
+                                            <h3 class="catalog__card-title">Брус</h3>
+                                            <span class="catalog__size-title">40x100x6000</span>
+                                        </div>
+                                        <div class="catalog__size-length catalog__size">Длина: <span>6000</span> мм</div>
+                                        <div class="catalog__size-width catalog__size">Ширина: <span>100</span> мм</div>
+                                        <div class="catalog__size-thickness catalog__size">Толщина: <span>100</span> мм</div>
+                                    </div>
+
+                                    <div class="catalog__card-price-btn">
+                                       <div class="catalog__card-price-wrp">
+                                            <div class="catalog__card-pm">ПМ: <span>30 ₽</span></div>
+                                            <div class="catalog__card-one">1 шт: <span>80 ₽</span></div>
+                                            <div class="catalog__card-m3">м3: <span>14 700 ₽</span></div>
+                                            <div class="catalog__card-m2">м2: <span>300 ₽</span></div>
+                                       </div>
+
+                                        <button class="catalog__card-btn btn popup-btn" data-btn="main">Заказать</button>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- Конец оболчки карточек товаров -->
                     </div>
                 </div>
-                </div>
+            </div>
             </div>
         </main>
 
@@ -407,6 +526,7 @@
     </div>
 <!-- wrapper -->
 <script src="js/nouislider.min.js"></script>
+<script src="js/catalog.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="js/index.js"></script>
 </body>

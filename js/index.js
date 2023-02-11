@@ -28,18 +28,24 @@ window.addEventListener('click', (e) => {
 })
 
 // sub-menu=======================
-const subMenu = document.querySelector('.sub-menu');
-const clickSubmenu = document.querySelector('.click-submenu');
+const subMenu = document.querySelectorAll('.sub-menu');
+const clickSubmenu = document.querySelectorAll('.click-submenu');
 const triangle = document.querySelector('.triangle');
 const verticalLineLast = document.querySelector('vertical-line-last');
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
 
-if (isMobile) {
-    clickSubmenu.addEventListener('click', () => {
-        subMenu.classList.toggle('active');
-        triangle.classList.toggle('active');
-    })
-}
+clickSubmenu.forEach(item => {
+    if (isMobile) {
+        item.addEventListener('click', () => {
+            subMenu.forEach(menu => {
+                menu.classList.toggle('active');
+            })
+
+        })
+    }
+})
+
+
 
 
 // POPUP С ФОРМАМИ==================================
@@ -169,60 +175,7 @@ function hideShowText3() {
 }
 hideShowText3();
 
-// RANGE SLIDER FOR FILTER-PRICE
-const rangeSlider = document.querySelectorAll('.rangeSlider');
-rangeSlider.forEach(item => {
-    if(item) {
-        noUiSlider.create(item, {
-          start: [100, 200],
-          connect: true,
-          range: {
-              'min': 100,
-              'max': 200
-          },
-          step: 1
-        });
 
-        const input0 = document.getElementById('input-price0');
-        const input1 = document.getElementById('input-price1');
-        const inputs = [input0, input1];
-
-        const noUiHandleLower = document.querySelector('.noUi-handle-lower'); //правый ползунок
-        const rangeRight = noUiHandleLower.getAttribute('aria-valuemax');
-
-
-        item.noUiSlider.on('update', (values, handle) => {
-          inputs[handle].value = Math.round(values[handle]);
-          values[handle] = Math.round(inputs[handle].value);
-        })
-
-        function setRangeSlider(i, value) {
-          let arr = [null, null];
-          arr[i] = value;
-
-          item.noUiSlider.set(arr);
-        }
-
-        inputs.forEach((item, i) => {
-          item.addEventListener('change', (e) => {
-            setRangeSlider(i, e.currentTarget.value);
-          })
-        })
-
-      } //конец if(rangeSlider)
-
-})
-
- //конец if(rangeSlider)
-
-// Скрыть/показать фильтр
-const filterForShowHide = document.querySelector('.filter-for-show-hide');
-const catalogSidebarHeadFilter = document.querySelectorAll('.catalog__sidebar-head-filter')
-
-catalogSidebarHeadFilter[1].addEventListener('click', () => {
-    console.log('ic')
-    filterForShowHide.classList.toggle('active');
-})
 
 // Маска телефона
 let maskCode = '+7 (___) ___-__-__'

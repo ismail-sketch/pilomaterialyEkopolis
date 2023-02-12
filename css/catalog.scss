@@ -272,6 +272,9 @@ $orangeColor: #FFA41E;
         display: flex;
         align-items: center;
         gap: 15px;
+        @media (max-width: 1000px) {
+            display: none;
+        }
         @media(max-width: 420px) {
             flex-direction: column;
         }

@@ -612,6 +612,7 @@ $orangeColor: #FFA41E;
     &__galery-wrp {
         display: flex;
         column-gap: 40px;
+        width: 70%;
         @media (max-width: 1235px) {
             width: 70%;
         }
@@ -643,6 +644,21 @@ $orangeColor: #FFA41E;
         }
         &:not(:last-child) {
             margin-bottom: 20px;
+        }
+    }
+    &__instock {
+        span {
+            padding: 6px 7px;
+            background-color: #1b7807;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 10px;
+        }
+        p {
+            font-family: 'Roboto', sans-serif;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
     }
     .cardBlock__btn {

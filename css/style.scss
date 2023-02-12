@@ -327,6 +327,7 @@ main {
       padding: 20px 15px 20px 15px;
       transform: translateX(120%);
       height: 100vh;
+      border-right: 1px solid #000;
     }
     .menu.active {
       -webkit-transform: translateX(0);
@@ -349,6 +350,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     background-color: #fff;
+
     @media (max-width: 1070px) {
         column-gap: 15px;
         display: flex;

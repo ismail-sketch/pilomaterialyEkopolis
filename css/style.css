@@ -441,6 +441,7 @@ main {
     -webkit-transform: translateX(120%);
             transform: translateX(120%);
     height: 100vh;
+    border-right: 1px solid #000;
   }
   .menu.active {
     -webkit-transform: translateX(0);

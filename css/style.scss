@@ -350,6 +350,7 @@ main {
     flex-wrap: wrap;
     background-color: #fff;
     border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
 
     @media (max-width: 1070px) {
         column-gap: 15px;
@@ -468,7 +469,7 @@ main {
       display: none;
     }
     @media (max-width: 585px) {
-      // display: block;
+      display: block;
     }
   }
   .click-submenu-mob {

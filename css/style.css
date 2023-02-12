@@ -473,6 +473,7 @@ main {
       flex-wrap: wrap;
   background-color: #fff;
   border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 @media (max-width: 1070px) {
@@ -624,6 +625,12 @@ main {
 @media (max-width: 1070px) {
   .click-submenu-desk {
     display: none;
+  }
+}
+
+@media (max-width: 585px) {
+  .click-submenu-desk {
+    display: block;
   }
 }
 

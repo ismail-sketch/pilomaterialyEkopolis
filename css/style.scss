@@ -298,7 +298,7 @@ main {
     margin: 0 auto;
     display: block;
     position: relative;
-    transition: transform .5s;
+    transition: transform .4s;
   }
   .triangle {
     width: 0;
@@ -348,6 +348,7 @@ main {
     column-gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: #fff;
     @media (max-width: 1070px) {
         column-gap: 15px;
         display: flex;

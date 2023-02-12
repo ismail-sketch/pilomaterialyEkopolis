@@ -229,9 +229,11 @@ main {
     transition: background .3s;
     align-items: center;
     justify-content: center;
-    &:hover {
-      background-color: #2F6A22;
-      color: #fff !important;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #2F6A22;
+        color: #fff !important;
+      }
     }
   }
 

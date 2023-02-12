@@ -336,9 +336,11 @@ main {
           justify-content: center;
 }
 
-.menu__btn:hover {
-  background-color: #2F6A22;
-  color: #fff !important;
+@media (any-hover: hover) {
+  .menu__btn:hover {
+    background-color: #2F6A22;
+    color: #fff !important;
+  }
 }
 
 .burger {

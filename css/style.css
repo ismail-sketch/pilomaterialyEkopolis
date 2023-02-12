@@ -441,7 +441,6 @@ main {
     -webkit-transform: translateX(120%);
             transform: translateX(120%);
     height: 100vh;
-    border-left: 1px solid #000;
   }
   .menu.active {
     -webkit-transform: translateX(0);
@@ -625,12 +624,6 @@ main {
 @media (max-width: 1070px) {
   .click-submenu-desk {
     display: none;
-  }
-}
-
-@media (max-width: 585px) {
-  .click-submenu-desk {
-    display: block;
   }
 }
 

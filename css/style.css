@@ -116,7 +116,6 @@ main {
   height: 95px;
   background-color: #fff;
   width: 100%;
-  z-index: 4;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

@@ -87,7 +87,9 @@ main {
     top: 0;
     border-bottom: 1px solid #b0b0b0;
   }
-
+  .header__menu {
+    height: 100%;
+  }
 
   @media (max-width: 500px) {
     .header {
@@ -325,7 +327,7 @@ main {
       position: fixed;
       right: 0;
       top: 0;
-      z-index: 4;
+      z-index: 10;
       width: 400px;
       background-color: #fff;
       padding: 20px 15px 20px 15px;

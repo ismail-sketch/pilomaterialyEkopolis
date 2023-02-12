@@ -362,7 +362,7 @@ main {
 
 @media ((max-width: 1070px)) {
   .burger {
-    display: block;
+    display: block !important;
   }
 }
 

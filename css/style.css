@@ -355,7 +355,6 @@ main {
   z-index: 6;
   width: 100px;
   height: 100px;
-  background-color: red;
   display: none;
   cursor: pointer;
 }

@@ -130,10 +130,6 @@ main {
   border-bottom: 1px solid #b0b0b0;
 }
 
-.header__menu {
-  height: 100%;
-}
-
 @media (max-width: 500px) {
   .header {
     display: -webkit-box;

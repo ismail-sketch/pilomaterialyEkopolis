@@ -46,10 +46,13 @@ rangeSlider.forEach(item => {
 const filterForShowHide = document.querySelector('.filter-for-show-hide');
 const catalogSidebarHeadFilter = document.querySelectorAll('.catalog__sidebar-head-filter')
 
-catalogSidebarHeadFilter[1].addEventListener('click', () => {
-    console.log('ic')
-    filterForShowHide.classList.toggle('active');
-})
+if(catalogSidebarHeadFilter[1] && catalogSidebarHeadFilter[1] !== null) {
+    catalogSidebarHeadFilter[1].addEventListener('click', () => {
+        console.log('ic')
+        filterForShowHide.classList.toggle('active');
+    })
+}
+
 
 // ПЕРЕСТАНОВКА КАРТОЧЕК==========
 const catalogCardsWrp = document.querySelector('.catalog__cards-wrp');
@@ -60,40 +63,56 @@ const catalogCardTextWrp = document.querySelectorAll('.catalog__card-text-wrp');
 const catalogCardBtn = document.querySelectorAll('.catalog__card-btn');
 
 function moveCards() {
-    sortImgDg1.addEventListener('click', () => {
-        catalogCardsWrp.classList.add('active');
-        sortImgDg1.classList.add('active');
-        sortImgDg2.classList.remove('active');
+    if(sortImgDg1 !== null) {
+        sortImgDg1.addEventListener('click', () => {
+            catalogCardsWrp.classList.add('active');
+            sortImgDg1.classList.add('active');
+            sortImgDg2.classList.remove('active');
 
-        catalogCardItem.forEach(item => {
-            item.classList.add('active');
-            item.classList.remove('active-for-anim');
-        })
+            catalogCardItem.forEach(item => {
+                item.classList.add('active');
+                item.classList.remove('active-for-anim');
+            })
 
-        catalogCardBtn.forEach(item => {
-            item.classList.add('active');
-        })
+            catalogCardBtn.forEach(item => {
+                item.classList.add('active');
+            })
 
-        catalogCardTextWrp.forEach(item => {
-            item.classList.add('active');
+            catalogCardTextWrp.forEach(item => {
+                item.classList.add('active');
+            })
         })
-    })
+    }
 
-    sortImgDg2.addEventListener('click', () => {
-        catalogCardsWrp.classList.remove('active');
-        sortImgDg1.classList.remove('active');
-        sortImgDg2.classList.add('active');
+    if(sortImgDg2 !== null) {
+        sortImgDg2.addEventListener('click', () => {
+            catalogCardsWrp.classList.remove('active');
+            sortImgDg1.classList.remove('active');
+            sortImgDg2.classList.add('active');
 
-        catalogCardItem.forEach(item => {
-            item.classList.remove('active');
-            item.classList.add('active-for-anim');
+            catalogCardItem.forEach(item => {
+                item.classList.remove('active');
+                item.classList.add('active-for-anim');
+            })
+            catalogCardBtn.forEach(item => {
+                item.classList.remove('active');
+            })
+            catalogCardTextWrp.forEach(item => {
+                item.classList.remove('active');
+            })
         })
-        catalogCardBtn.forEach(item => {
-            item.classList.remove('active');
-        })
-        catalogCardTextWrp.forEach(item => {
-            item.classList.remove('active');
-        })
-    })
+    }
+
 }
 moveCards();
+
+
+$(document).ready(function(){
+	$('.slider ul').bxSlider({
+		pagerCustom: '.slider_pager ul',
+		controls: true,
+		auto: false,
+		minSlides: 1,
+		maxSlides: 1
+	});
+});

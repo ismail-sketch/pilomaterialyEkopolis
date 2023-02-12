@@ -350,6 +350,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     background-color: #fff;
+    border-left: 1px solid #000;
 
     @media (max-width: 1070px) {
         column-gap: 15px;

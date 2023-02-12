@@ -298,10 +298,7 @@ main {
     margin: 0 auto;
     display: block;
     position: relative;
-    -webkit-transition: -webkit-transform .3s;
-    transition: -webkit-transform .3s;
-    transition: transform .3s;
-    transition: transform .3s, -webkit-transform .3s;
+    transition: transform .5s;
   }
   .triangle {
     width: 0;
@@ -328,13 +325,11 @@ main {
       width: 400px;
       background-color: #fff;
       padding: 20px 15px 20px 15px;
-      -webkit-transform: translateX(100%);
-              transform: translateX(100%);
+      transform: translateX(120%);
       height: 100vh;
     }
     .menu.active {
       -webkit-transform: translateX(0);
-              transform: translateX(0);
     }
     .menu:first-child.active {
         justify-content: end;

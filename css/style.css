@@ -481,6 +481,7 @@ main {
       flex-wrap: wrap;
   background-color: #fff;
   max-width: 100%;
+  position: absolute;
 }
 
 @media (max-width: 1070px) {

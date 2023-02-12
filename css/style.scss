@@ -246,8 +246,8 @@ main {
     top: 32px;
     right: 15px;
     z-index: 6;
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     display: none;
     cursor: pointer;
   }
@@ -367,7 +367,6 @@ main {
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
-        margin-left: 50px;
     }
     @media (max-width: 560px) {
       flex-direction: column;

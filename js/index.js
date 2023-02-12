@@ -30,8 +30,7 @@ window.addEventListener('click', (e) => {
 // sub-menu=======================
 const subMenu = document.querySelectorAll('.sub-menu');
 const clickSubmenu = document.querySelectorAll('.click-submenu');
-const triangle = document.querySelector('.triangle');
-const verticalLineLast = document.querySelector('vertical-line-last');
+
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
 
 clickSubmenu.forEach(item => {
